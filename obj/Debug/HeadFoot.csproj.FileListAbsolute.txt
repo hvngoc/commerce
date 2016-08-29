@@ -1,0 +1,90 @@
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\HeadFoot.dll.config
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\HeadFoot.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\HeadFoot.pdb
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\Antlr3.Runtime.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\Microsoft.Web.Infrastructure.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\Newtonsoft.Json.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.Mvc.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Helpers.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Mvc.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Optimization.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Razor.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Deployment.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Razor.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\WebGrease.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.Mvc.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Helpers.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Mvc.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Optimization.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Razor.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Deployment.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Razor.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\Antlr3.Runtime.pdb
+D:\Web development\04.Test\HeadFoot\HeadFoot\bin\Newtonsoft.Json.xml
+D:\Web development\04.Test\HeadFoot\HeadFoot\obj\Debug\HeadFoot.csprojResolveAssemblyReference.cache
+D:\Web development\04.Test\HeadFoot\HeadFoot\obj\Debug\HeadFoot.dll
+D:\Web development\04.Test\HeadFoot\HeadFoot\obj\Debug\HeadFoot.pdb
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\HeadFoot.dll.config
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\HeadFoot.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\HeadFoot.pdb
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\Antlr3.Runtime.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\Microsoft.Web.Infrastructure.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\Newtonsoft.Json.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\PagedList.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\PagedList.Mvc.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Helpers.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Mvc.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Optimization.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Razor.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.WebPages.Deployment.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.WebPages.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.WebPages.Razor.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\WebGrease.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\PagedList.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\PagedList.Mvc.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Helpers.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Mvc.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Optimization.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.Razor.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.WebPages.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.WebPages.Deployment.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\System.Web.WebPages.Razor.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\Antlr3.Runtime.pdb
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\bin\Newtonsoft.Json.xml
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\obj\Debug\HeadFoot.csprojResolveAssemblyReference.cache
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\obj\Debug\HeadFoot.dll
+D:\Web development\04.Test\HeadFoot - Copy\HeadFoot\obj\Debug\HeadFoot.pdb
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\HeadFoot.dll.config
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\HeadFoot.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\HeadFoot.pdb
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\Antlr3.Runtime.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\Microsoft.Web.Infrastructure.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\Newtonsoft.Json.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.Mvc.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Helpers.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Mvc.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Optimization.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Razor.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Deployment.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Razor.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\WebGrease.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\PagedList.Mvc.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Helpers.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Mvc.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Optimization.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.Razor.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Deployment.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\System.Web.WebPages.Razor.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\Antlr3.Runtime.pdb
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\bin\Newtonsoft.Json.xml
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\obj\Debug\HeadFoot.csprojResolveAssemblyReference.cache
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\obj\Debug\HeadFoot.dll
+D:\_Studies\Univer\3.Web development\04.Test\HeadFoot\HeadFoot\obj\Debug\HeadFoot.pdb

@@ -1,0 +1,140 @@
+﻿@using HeadFoot.Models.DTO;
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <ul class="nav row">
+        @foreach (DTOCatalog catalog in ViewBag.listCatalog)
+        {
+            <li>
+                <a href="@Url.Action("Loading", "Home", new { page = 1, catalogID = @catalog.CatalogID })">
+                    @catalog.CatalogName
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="product-content container-fluid">
+    <div class="row">
+        <div class="left-side-product col-md-10">
+            <div class="gallery ">
+                <div id="photo">
+                    <img src="~/Images/Detail/@ViewBag.listHinhAnhBoSung[0].strHinhAnh">
+                </div>
+                <div class="images">
+                    @foreach (DTOHinhAnhBoSung DTOBoSung in @ViewBag.listHinhAnhBoSung)
+                    {
+                        <img src="~/Images/Detail/@DTOBoSung.strHinhAnh">
+                    }                    
+                </div>
+            </div>
+            <div class="content">
+                <div class="title">
+                    <span>@ViewBag.listThongTinBoSung[0].TenSanPham</span>
+                    <div class="subtitle gradient-line-bottom">
+                        <div class="rating ">
+                            @for (int i = 0; i < @ViewBag.listThongTinBoSung[0].SoSao; ++i)
+                            {
+                                <a href="">
+                                    <img src="~/Images/Static/stars.png" />
+                                </a>
+                            }
+                            <span>@ViewBag.listThongTinBoSung[0].Rating%</span>
+                        </div>
+                        <span>Đánh Giá @ViewBag.listThongTinBoSung[0].DanhGia</span>
+                        <span>@ViewBag.listThongTinBoSung[0].LuotMua Lượt Mua</span>
+                        <span>@ViewBag.listThongTinBoSung[0].LuotXem Lượt Xem</span>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="detail-price">@ViewBag.listThongTinBoSung[0].GiaMoi,000VND</div>
+                </div>
+                <div class="clothes-info">
+                    <div class=" clothes-attribute clothes-color">
+                        <span>Màu sắc</span>
+                        <a href="#" class="red"></a>
+                        <a href="#" class="green"></a>
+                        <a href="#" class="black"></a>
+                    </div>
+                    <div class="clothes-attribute clothes-size">
+                        <span>Kích thước</span>
+                        <a href="#" class="size-S">S</a>
+                        <a href="#" class="size-M">M</a>
+                        <a href="#" class="size-L">L</a>
+                    </div>
+                    <div class="clothes-attribute clothes-style">
+                        <span>Kiểu Dáng</span><span>@ViewBag.listThongTinBoSung[0].KieuDang</span>
+                    </div>
+                    <div class="clothes-attribute clothes-style">
+                        <span>Tồn Kho</span><span>@ViewBag.listThongTinBoSung[0].TonKho</span>
+                    </div>
+                    <div class="clothes-attribute clothes-quantity">
+                        <span>Đặt Mua</span>
+                        <input type="number" name="quanity" min="1" max="@ViewBag.listThongTinBoSung[0].TonKho">
+                    </div>
+                </div>
+                <div class="add-button">
+                    <button id="add-clothes" type="button" onclick="AddIdSanPhamtoList('@ViewBag.SanPhamID')">Thêm Vào Giỏ Hàng</button>
+                    <button id="buy-clothes" type="button" onclick="AddIdSanPhamtoList('@ViewBag.SanPhamID')">Mua Hàng</button>
+                </div>
+            </div>
+            <div class="instruction">
+                <a class="buying-step">Các Bước Thanh Toán</a>
+                <a class="transport">Phương Thức Vận Chuyển</a>
+                <a class="payment">Cách Thức Thanh Toán</a>
+            </div>
+            <div class="detail">
+                <p>@ViewBag.listThongTinBoSung[0].MoTa</p>
+                @foreach (DTOHinhAnhBoSung DTOBoSung in @ViewBag.listHinhAnhBoSung)
+                {
+                    <img src="~/Images/Detail/@DTOBoSung.strHinhAnh">
+                }
+            </div>
+        </div>
+
+        <div class="right-side-product col-md-2 ">
+            <div class="top-ten">
+                <div>Sản Phẩm Bán Chạy
+                </div>
+                @foreach (DTOSanPham sanPham in @ViewBag.listTop8SanPhamBanChay) 
+                { 
+                <div class="top-ten-item">
+                    <a href="@Url.Action("Detail", "Home", new { sanPhamID = @sanPham.SanPhamID })"> 
+                        <img src="~/Images/Data/@sanPham.HinhAnh">
+                    </a>
+                    <div>@sanPham.TenSanPham </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="interested-item row">
+        <div>Có Thể Bạn Quan Tâm
+        </div>
+        <div id="scroller">
+            <div class="innerScrollArea">
+                <ul>
+                    @foreach(DTOSanPham sanpham in @ViewBag.listTop10SanPhamLienQuan)
+                    { 
+                    <li>
+                        <a href="@Url.Action("Detail", "Home", new { sanPhamID = @sanpham.SanPhamID })">
+                            <img src="~/Images/Data/@sanpham.HinhAnh">
+                        </a>
+                        <div>$@sanpham.GiaMoi.000VND</div>
+                        <div>@sanpham.TenSanPham</div>
+                    </li>
+                    }                   
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

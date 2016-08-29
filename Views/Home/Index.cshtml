@@ -1,0 +1,117 @@
+﻿@using HeadFoot.Models.DTO;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <ul class="nav row">
+        @foreach (DTOCatalog catalog in ViewBag.listCatalog)
+        {
+            <li>
+                <a href="@Url.Action("Loading", "Home", new { page = 1, catalogID = @catalog.CatalogID })">
+                    @catalog.CatalogName
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="container">
+    <div class="container-fluid">
+        <ul class="slider row">
+            @foreach (DTOHinhAnhSuKien anhSuKien in ViewBag.listHinhAnhSuKien)
+            {
+                <li>
+                    <img src="~/Images/Event/@anhSuKien.strHinhAnh"/>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div class="category row">
+        <a href="@Url.Action("Loading", "Home", new { page = 1, catalogID = "KhuyenMai" })">Khuyến Mãi</a>
+    </div>
+    <div class="products gradient-line-bottom row">
+        @foreach (DTOSanPham sanPham in ViewBag.list4SanPhamKhuyenMai)
+        {
+            <div class="col-md-3">
+                <div>
+                    <a href="@Url.Action("Detail", "Home", new { sanPhamID = @sanPham.SanPhamID })">
+                        <div class="product-item">
+                            <img src="~/Images/Data/@sanPham.HinhAnh">
+                        </div>
+                    </a>
+                    <div class="info">
+                        <h4>@sanPham.TenSanPham</h4>
+                        <p>@sanPham.MoTa</p>
+                        <p>
+                            <del>&#36;@sanPham.GiaCu&nbsp;</del>&#36;@sanPham.GiaMoi
+                            <button type="button" onclick="AddIdSanPhamtoList('@sanPham.SanPhamID')">
+                                Add to Cart
+                                <img src="~/Images/Static/cart.png" />
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="category row">
+        <a href="@Url.Action("Loading", "Home", new { page = 1, catalogID = "MoiNhat" })">Mới Nhất</a>
+    </div>
+    <div class="products gradient-line-bottom row">
+        @foreach (DTOSanPham sanPham in ViewBag.list4SanPhamMoiNhat)
+        {
+            <div class="col-md-3">
+                <div>
+                    <a href="@Url.Action("Detail", "Home", new { sanPhamID = @sanPham.SanPhamID })">
+                        <div class="product-item">
+                            <img src="~/Images/Data/@sanPham.HinhAnh">
+                        </div>
+                    </a>
+                    <div class="info">
+                        <h4>@sanPham.TenSanPham</h4>
+                        <p>@sanPham.MoTa</p>
+                        <p>
+                            <del>&#36;@sanPham.GiaCu&nbsp;</del>&#36;@sanPham.GiaMoi
+                            <button type="button" onclick="AddIdSanPhamtoList('@sanPham.SanPhamID')">
+                                Add to Cart
+                                <img src="~/Images/Static/cart.png" />
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="category row">
+        <a href="@Url.Action("Loading", "Home", new { page = 1, catalogID = "NoStyle" })">No Style</a>
+    </div>
+    <div class="products gradient-line-bottom row">
+        @foreach (DTOSanPham sanPham in ViewBag.list4SanPhamNoStyle)
+        {
+            <div class="col-md-3">
+                <div>
+                    <a href="@Url.Action("Detail", "Home", new { sanPhamID = @sanPham.SanPhamID })">
+                        <div class="product-item">
+                            <img src="~/Images/Data/@sanPham.HinhAnh">
+                        </div>
+                    </a>
+                    <div class="info">
+                        <h4>@sanPham.TenSanPham</h4>
+                        <p>@sanPham.MoTa</p>
+                        <p>
+                            <del>&#36;@sanPham.GiaCu&nbsp;</del>&#36;@sanPham.GiaMoi
+                            <button type="button" onclick="AddIdSanPhamtoList('@sanPham.SanPhamID')">
+                                Add to Cart
+                                <img src="~/Images/Static/cart.png" />
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

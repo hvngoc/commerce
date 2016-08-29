@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "QuenMatKhau";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" cart-container container">
+    <div class="cart">
+        <div>
+            Tài Khoản
+        </div>
+        <div>
+            @if (ViewBag.matkhau == null)
+            {
+                <h4> Tài Khoản và email không chính xác </h4>
+            }
+            else
+            {
+                <h4> Mật khẩu của bạn là: @ViewBag.matkhau</h4>
+            }
+        </div>
+    </div>
+</div>
+
+

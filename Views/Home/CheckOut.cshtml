@@ -1,0 +1,72 @@
+﻿@using HeadFoot.Models.DTO
+@{
+    ViewBag.Title = "CheckOut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" cart-container container">
+    <div class="cart">
+        <div>SHOPPING CART</div>
+        <div>
+            <table>
+                <tr>
+                    <th class="product-header">Product</th>
+                    <th class="price-header">Price</th>
+                    <th class="quantity-header">Quantity</th>
+                    <th class="remove-header">Remove</th>
+                    <th class="total-header">Total</th>
+                </tr>
+                @foreach(DTOSanPham sanPham in @ViewBag.listSanPhamInCART)
+                { 
+                <tr class="product-row">
+                    <td>
+                        <span>@sanPham.TenSanPham</span>
+                        <div>@sanPham.MoTa</div>
+                    </td>
+                    <td>
+                        $@sanPham.GiaMoi,000VND
+                    </td>
+                    <td>
+                        <input type="number" min="1" 
+                               placeholder="@HeadFoot.Models.Global.listInCartIdSanPhamSoLuong[@sanPham.SanPhamID]">
+                    </td>
+                    <td>
+                        <button type="button" onclick="RemoveIdSanPhamFromList('@sanPham.SanPhamID')">Remove</button>
+                    </td>
+                    <td>
+                        $@sanPham.GiaCu,000VND
+                    </td>
+                </tr>
+                }
+                <tr class="discount-row">
+                    <td colspan="5">
+                        <span>Discount Coupon</span>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="5">
+                        <span>Total @ViewBag.countInCART Items</span>
+                        <span>$@ViewBag.sumInCART,000VND</span>
+                    </td>
+                </tr>
+            </table>
+            @if(@Session["FirstName"] == null)
+            {
+            <div class="checkout-btn">
+                <button type="button" onclick="alertNeedLogin()"> Thanh Toán</button>
+            </div>
+            }
+            else
+            {
+                <div class="checkout-btn">
+                    <a class="btn btn-success" href="@Url.Action("Dashboard", "Customer", new { param = "ThanhToan"})"> Thanh Toán</a>
+                </div>
+            }
+            <div class="checkout-btn">
+                <a class="btn-warning btn" href="@Url.Action("CheckOut","Home")"> Update Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+

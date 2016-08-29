@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Infomation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @foreach (string item in ViewBag.listHinhAnh)
+    {
+        <img src="~/Images/Info/@item" />
+    }
+</div>
+

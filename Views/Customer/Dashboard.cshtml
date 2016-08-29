@@ -1,0 +1,270 @@
+﻿@using HeadFoot.Models.DTO
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HeadFoot.Models.DTO.DTOViewModelSanPham>
+@using PagedList;
+@using PagedList.Mvc;
+<div class=" cart-container container">
+    <div class="cart">
+        <div>
+            DashBoard
+        </div>
+        @if (ViewBag.param == "ThanhToan")
+        {
+            <h3>Thanh Toán Thành Công</h3>
+        }
+        <div>
+            <a onclick="showCapNhatThongTin()"> Cập nhật thông tin</a><br />
+            <a onclick="showThayDoiMatKhau()"> Đổi mật khẩu </a><br />
+            <a onclick="showDongGopYKien()"> Đóng góp ý kiến </a><br />
+            <a href="@Url.Action("Dashboard", "Customer", new {param = "LichSu" })"> Xem lịch sử mua hàng</a><br />
+            <a href="@Url.Action("DangXuat","Account")"> Đăng xuất</a><br />
+            @if (ViewBag.param == "LichSu")
+            {
+                <table>
+                    <tr>
+                        <th class="product-header">Ngày Tháng</th>
+                        <th class="price-header">Số Lượng</th>
+                        <th class="quantity-header">Tổng Tiền</th>
+                    </tr>
+                    @foreach (DTOGiaoDich giaoDich in @ViewBag.listDTOGiaoDich)
+                    {
+                        <tr class="product-row">
+                            <td>
+                                @giaoDich.HoaDonID
+                            </td>
+                            <td>
+                                @giaoDich.SoLuong
+                            </td>
+                            <td>
+                                $@giaoDich.TongTien,000VND
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div><br />
+        @if (ViewBag.LoaiTaiKhoan == 1)
+        {
+            <div> Quyền ADMIN</div>
+            <div>
+                <a onclick="showKiemTraTaiKhoan()"> Xem thông tin tài khoản </a><br />
+                <a onclick="showThemTaiKhoan()"> Thêm tài khoản mới </a><br />
+                <a onclick="showXoaTaiKhoan()"> Xóa một tài khoản </a><br />
+                <a href="@Url.Action("Dashboard", "Customer", new {param = "GopY" })"> Top 10 ý kiến phản hồi </a><br />
+                <a href="@Url.Action("Dashboard", "Customer", new {param = "ThongKe" })"> Thống kê thu chi </a><br />
+                <a href="@Url.Action("Dashboard", "Customer", new {param = "XemSanPham" })"> Xem Sản Phẩm </a><br />
+                @if (ViewBag.param == "GopY")
+                {
+                    <table>
+                        <tr>
+                            <th class="price-heade"> Ngày Tháng Năm</th>
+                            <th class="quantity-header">Tên Người Góp Ý</th>
+                            <th class="total-header">Nội Dung Góp Ý</th>
+                        </tr>
+                        @foreach (DTOGopYNguoiDung gopY in ViewBag.listTop10YKienDongGop)
+                        {
+                            <tr class="product-row">
+                                <td>
+                                    @gopY.DateNow
+                                </td>
+                                <td>
+                                    @gopY.NguoiDungID
+                                </td>
+                                <td>
+                                    @gopY.NoiDung
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                }
+                @if (ViewBag.param == "ThongKe")
+                {
+                    <table>
+                        <tr>
+                            <th class="product-header">Tổng sản phẩm đã bán</th>
+                            <th class="price-header">Tổng Số người mua</th>
+                            <th class="quantity-header">Tổng số hóa đơn</th>
+                            <th class="remove-header">Tổng số lượng đã bán</th>
+                            <th class="total-header">Tổng tiền thu được</th>
+                        </tr>
+                        <tr class="product-row">
+                            <td>
+                                @ViewBag.TongSanPhamDaBan
+                            </td>
+                            <td>
+                                @ViewBag.TongSoNguoiDaMua
+                            </td>
+                            <td>
+                                @ViewBag.TongHoaDonDaBan
+                            </td>
+                            <td>
+                                @ViewBag.TongSoLuongDaBan
+                            </td>
+                            <td>
+                                @ViewBag.TongTienThuDuoc
+                            </td>
+                        </tr>
+                    </table>
+                }
+                @if (ViewBag.param == "XemSanPham")
+                {
+                    <ul class="nav row">
+                        @foreach (DTOCatalog catalog in ViewBag.listDTOCatalog)
+                        {
+                            <li>
+                                <a href="@Url.Action("Dashboard", "Customer", new { param = "XemSanPham", value = catalog.CatalogID})">
+                                    @catalog.CatalogName
+                                </a>
+                            </li>
+                        }
+                    </ul><br />
+                    if (ViewBag.value != null)
+                    {
+                        <table>
+                            <tr>
+                                <th class="price-heade">Loại Sản Phẩm</th>
+                                <th class="product-header">Tên Sản Phảm</th>
+                                <th class="quantity-header">Giá</th>
+                                <th class="remove-header">Lượt Mua</th>
+                                <th class="total-header">Remove</th>
+                            </tr>
+                            @foreach (DTOViewModelSanPham sanPham in ViewBag.listDTOViewModelSanPham)
+                            {
+                                <tr class="product-row">
+                                    <td>
+                                        @sanPham.catalogName
+                                    </td>
+                                    <td>
+                                        <span>@sanPham.sanPhamName</span>
+                                        <div>@sanPham.sanPhamMoTa</div>
+                                    </td>
+                                    <td>
+                                        @sanPham.GiaMoi
+                                    </td>
+                                    <td>
+                                        @sanPham.LuotMua
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-warning" href="@Url.Action("Dashboard", "Customer", new { 
+                                               param = "XemSanPham", value = ViewBag.value, obj = @sanPham.sanPhamID})">
+                                            Remove
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                        <div align="center">
+                            @Html.PagedListPager((IPagedList)ViewBag.listDTOViewModelSanPham, pg => Url.Action("Dashboard",
+                            new { param = ViewBag.param, value = ViewBag.value, pg}))
+                        </div>
+                    }
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<div id="wrapper-capnhat-thongtin">
+    <div id="sign-in">
+        <form>
+            <div>Cập Nhật Thông Tin</div>
+            <div>
+                <label for="fisrt-name">First Name</label>
+                <input type="text" id="firstNameTT" class="first-name required">
+            </div>
+            <div>
+                <label for="last-name">Last Name</label>
+                <input type="text" id="lastNameTT" class="last-name required">
+            </div>
+            <button type="button" class="btn btn-success" onclick="releaseCapNhatThongTin()">Thay Đổi</button>
+            <button type="button" class="btn btn-warning" onclick="showCapNhatThongTin()">Cancel</button>
+        </form>
+    </div>
+</div>
+<div id="wrapper-capnhat-matkhau">
+    <div id="sign-in">
+        <form>
+            <div>Đổi Mật Khẩu</div>
+            <div>
+                <label for="password">Mật Khẩu mới</label>
+                <input type="password" id="matKhauTT" class="password required">
+            </div>
+            <button type="button" class="btn btn-success" onclick="releaseThayDoiMatKhau()">Thay Đổi</button>
+            <button type="button" class="btn btn-warning" onclick="showThayDoiMatKhau()">Cancel</button>
+        </form>
+    </div>
+</div>
+<div id="wrapper-kiemtra-taikhoan">
+    <div id="sign-in">
+        <form>
+            <div>Kiểm tra tài khoản</div>
+            <div>
+                <label for="username">Tên Tài Khoản</label>
+                <input type="text" id="TaiKhoanTT" class="username required">
+            </div>
+            <button type="button" class="btn btn-success" onclick="releaseKiemTraTaiKhoan()">Xem</button>
+            <button type="button" class="btn btn-warning" onclick="showKiemTraTaiKhoan()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<div id="wrapper-themmoi-taikhoan">
+    <div id="sign-in">
+        <form>
+            <div>Thêm tài khoản</div>
+            <div>
+                <label for="username">Tên Tài Khoản</label>
+                <input type="text" id="TaiKhoanTTThem" class="username required">
+            </div>
+            <div>
+                <label for="password">Mật Khẩu mới</label>
+                <input type="password" id="matKhauTTThem" class="password required">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="emailTTThem" class="email required">
+            </div>
+            <div>
+                <label for="fisrt-name">First Name</label>
+                <input type="text" id="firstNameTTThem" class="first-name required">
+            </div>
+            <div>
+                <label for="last-name">Last Name</label>
+                <input type="text" id="lastNameTTThem" class="last-name required">
+            </div>
+            <button type="button" class="btn btn-success" onclick="releaseThemTaiKhoan()">Tạo Mới</button>
+            <button type="button" class="btn btn-warning" onclick="showThemTaiKhoan()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<div id="wrapper-xoa-taikhoan">
+    <div id="sign-in">
+        <form>
+            <div>Xóa tài khoản</div>
+            <div>
+                <label for="username">Tên Tài Khoản</label>
+                <input type="text" id="TaiKhoanTTxoa" class="username required">
+            </div>
+            <button type="button" class="btn btn-success" onclick="releaseXoaTaiKhoan()">Xóa</button>
+            <button type="button" class="btn btn-warning" onclick="showXoaTaiKhoan()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<div id="wrapper-donggop-ykien">
+    <div id="sign-in">
+        <form>
+            <div>Đóng Góp Ý Kiến</div>
+            <div>
+                <label for="username">Nội Dung</label>
+                <input type="text" id="NoiDungTT">
+            </div>
+            <button type="button" class="btn btn-success" onclick="releaseDongGopYKien()">Đóng Góp</button>
+            <button type="button" class="btn btn-warning" onclick="showDongGopYKien()">Cancel</button>
+        </form>
+    </div>
+</div>

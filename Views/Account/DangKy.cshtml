@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" cart-container container">
+    <div class="cart">
+        <div>
+            Tài Khoản
+        </div>
+        <div>
+            @if (ViewBag.isUserNameHopLe == false)
+            {
+                <h4> Tài Khoản này đã được sử dụng </h4>
+            }
+            else if (ViewBag.isEmailHopLe == false)
+            {
+                <h4> Email này đã được sử dụng </h4>
+            }
+            else
+            {
+                <h4> Đăng ký Thành công. Đăng nhập để sử dụng</h4>
+            }
+        </div>
+    </div>
+</div>
+
+

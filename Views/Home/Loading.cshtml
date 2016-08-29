@@ -1,0 +1,52 @@
+﻿@using HeadFoot.Models.DTO;
+@{
+    ViewBag.Title = "Loading";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HeadFoot.Models.DTO.DTOSanPham>
+@using PagedList;
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <ul class="nav row">
+        @foreach (DTOCatalog catalog in ViewBag.listCatalog)
+        {
+            <li>
+                <a href="@Url.Action("Loading", "Home", new { page = 1, catalogID = @catalog.CatalogID})">
+                    @catalog.CatalogName
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+<div class="container">
+    <div class="products gradient-line-bottom row">
+        @foreach (var sanPham in ViewBag.OnePageOfProducts)
+        {
+            <div class="col-md-3">
+                <div>
+                    <a href="@Url.Action("Detail", "Home", new { sanPhamID = @sanPham.SanPhamID })">
+                        <div class="product-item">
+                            <img src="~/Images/Data/@sanPham.HinhAnh">
+                        </div>
+                    </a>
+                    <div class="info">
+                        <h4>@sanPham.TenSanPham</h4>
+                        <p>@sanPham.MoTa</p>
+                        <p>
+                            <del>&#36;@sanPham.GiaCu&nbsp;</del>&#36;@sanPham.GiaMoi
+                            <button type="button" onclick="AddIdSanPhamtoList('@sanPham.SanPhamID')">
+                                Add to Cart
+                                <img src="~/Images/Static/cart.png" />
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div align="center">
+        @Html.PagedListPager((IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Loading", new { page, catalogID = ViewBag.catalogID }))
+    </div>
+</div>

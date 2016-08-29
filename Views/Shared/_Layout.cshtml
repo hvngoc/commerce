@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Savvy Shop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/bootstrap.min.css")
+    @Styles.Render("~/Content/bootstrap-theme.min.css")
+    @Styles.Render("~/Content/ui.captionator.css")
+    @Styles.Render("~/Content/theme.css")
+    @Styles.Render("~/Content/ui.product.css")
+    @Styles.Render("~/Content/view_detail.css")
+    @Styles.Render("~/Content/check-out.css")
+    @Styles.Render("~/Content/customer.css")
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="intro row">
+            <ul>
+                <li>
+                    <div class="time-working">
+                        Mọi Lúc
+                        <p>Đặt Hàng 24/7</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="shipping">
+                        Mọi Nơi
+                        <p>Giao Hàng Tận Nơi</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="money-back">
+                        7 Ngày
+                        <p>Đổi trả trong 7 ngày</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="price">
+                        Rẻ Nhất
+                        <p>Giá Rẻ Nhất</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="logo col-md-2">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Images/Static/ShopSavvy-logo.png" />
+                </a>
+            </div>
+            <div class="col-md-6" id="search">
+                <form action="@Url.Action("Search", "Home")" method="get">
+                    <input type="text" name="search_text" id="search_text" placeholder="Search" />
+                    <input type="button" name="search_button" id="search_button" />
+                </form>
+            </div>
+            <div class="wishlist col-md-2">
+                <a href="#" onclick="showShoppingCart()">
+                    Cart
+                    <img src="~/Images/Static/cart-bag.png" width="64px" height="72px" />
+                </a>
+            </div>
+            @if (Session["FirstName"] == null) 
+            { 
+            <div class="sign-in-btn  col-md-2">
+                <a href="#" onclick="showSignIn()">Sign In</a>
+            </div>
+            }
+            else
+            {
+                <div class="sign-in-btn  col-md-2">
+                    <a href="@Url.Action("Dashboard", "Customer")" >Hello, @Session["FirstName"]</a>
+                </div>
+            }
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:27420/" 
+               data-text="Shavvy Shop Cute" data-via="localhost">Tweet</a>
+            <script>
+                !function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, 'script', 'twitter-wjs');
+            </script>
+
+            <div class="g-plus" data-action="share" data-annotation="bubble" data-text="Shavvy Shop Cute"
+                 data-href="http://localhost:27420/"></div>
+            <script type="text/javascript">
+                (function () {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/platform.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+            </script>
+
+            <div id="fb-root"></div>
+            <script>
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <div class="fb-like" data-href="http://localhost:27420/" data-layout="button" data-text="Shavvy Shop Cute"
+                 data-action="like" data-show-faces="true" data-share="true">
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="container">
+        <div class="container-fluid">
+            <div class=" footer row">
+                <div class="footer-left-side col-md-4">
+                    <div class="logo">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="~/Images/Static/ShopSavvy-logo.png" />
+                        </a>
+                    </div>
+                    <div class="about">
+                        <p>"Chúng tôi khác biệt...!" - Sau 5 năm thành lập đến nay hệ thống cửa hàng Shavvy đã ngày càng phát triển và hoàn thiện hơn so với những năm về trước, và đáp ứng nhu cầu mua sắm của các bạn trẻ. Trên một diện tích khá lớn các cửa hàng Shavvy đã mang đến đầy đủ mọi mặt hàng gồm quần áo, giày dép và các phụ kiện thời trang, đồ chơi kĩ thuật số có chất lượng cao và giá thành rẻ cho các bạn trẻ Việt Nam.</p>
+                    </div>
+                    <div class="contact">
+                        <span>Đặt hàng và giao hàng trên toàn quốc</span>
+                        <br>
+                        <p>(08)1112 1113</p>
+                        <br>
+                        <span>Ho tro</span>
+                        <br>
+                        <p>(08)1112 1119</p>
+                    </div>
+                </div>
+                <div class="footer-right-side col-md-8">
+                    <div class=" ">
+                        <span>Tài Khoản</span>
+                        <a onclick="showSignIn()">Đăng Ký </a>
+                        <a onclick="showSignIn()">Đăng Nhập </a>
+                        <a href="@Url.Action("CheckOut", "Home")">Xem Giỏ Hàng</a>
+                        <a onclick="showRenewPassword()">Quên Mật khẩu</a>
+                    </div>
+                    <div class="">
+                        <span>Thông Tin</span>
+                        <a href="@Url.Action("Infomation", "Home", new { idInf = "TuyenDung" })">Tuyển Dụng</a>
+                        <a href="@Url.Action("Infomation", "Home", new { idInf = "DatHang" })">Đặt hàng trực tuyến</a>
+                    </div>
+                    <div class="">
+                        <span>Dịch Vụ</span>
+                        <a href="@Url.Action("Infomation", "Home", new { idInf = "VanChuyen" })">Vận Chuyển</a>
+                        <a href="@Url.Action("Infomation", "Home", new { idInf = "DoiTra" })">Chính Sách Đổi trả</a>
+                        <a href="@Url.Action("Infomation", "Home", new { idInf = "BaoHanh" })">Chính Sách Bảo Hành</a>
+                        <a href="@Url.Action("Infomation", "Home", new { idInf = "KhachVip" })">Khách Hàng VIP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.js")
+    @Scripts.Render("~/Scripts/jquery-ui.js")
+    @Scripts.Render("~/Scripts/bootstrap.min.js")
+
+    @Scripts.Render("~/Scripts/ui.captionator.js")
+    @Scripts.Render("~/Scripts/slider.js")
+    @Scripts.Render("~/Scripts/ui.product.js")
+    @Scripts.Render("~/Scripts/home.js")
+    @Scripts.Render("~/Scripts/view-detail.js")
+    
+    @Scripts.Render("~/Scripts/global_js.js")
+    @Scripts.Render("~/Scripts/customer.js")
+
+    <div id="overlay">
+        <div id="sign-up">
+            <form role="form"action="@Url.Action("DangKy", "Account")">
+                <div>SIGN UP</div>
+                <div>
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="fname" placeholder="First Name" class=" first-name required">
+                </div>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="lname" placeholder="Last Name" class="last-name required">
+                </div>
+                <div>
+                    <label for="username">User Name</label>
+                    <input type="text" name="uname" placeholder="User Name" class="username required">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Email" class="email required">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password" class="password required">
+                </div>
+                <button id="register-btn">Register</button>
+                <button type="button" id="register-btn" onclick="overlay()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="wrapper-sign-in">
+        <div id="sign-in">
+            <form action="@Url.Action("DangNhap","Account")">
+                <div>Sign In</div>
+                <div>
+                    <label for="username">User Name</label>
+                    <input type="text" name="name" class="username required">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="password required">
+                </div>
+                <button class="sign-in-btn">Sign In</button>
+                <button type="button" class="sign-in-btn" onclick="showSignUpFormSignIn()">Sign Up</button>
+                <button type="button" class="btn btn-warning" onclick="showSignIn()">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div id="wrapper-renew-password">
+        <div id="sign-in">
+            <form action="@Url.Action("QuenMatKhau","Account")">
+                <div>Quên Mật Khẩu</div>
+                <div>
+                    <label for="username">User Name</label>
+                    <input type="text" name="name" class="username required">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="email required">
+                </div>
+                <button class="btn btn-success">Nhận mật khẩu</button>
+                <button type="button" class="btn btn-warning" onclick="showRenewPassword()">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div id="shopping-cart">
+        <table id ="shopping-table">
+            <colgroup>
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <tr>
+                <th class="quantity-header">QTY</th>
+                <th class="product-header">Product</th>
+                <th class="subtotal-header">Subtotal</th>
+            </tr>
+        </table>
+        <form action="@Url.Action("CheckOut", "Home")">
+            <button class="btn btn-success">View Cart</button>
+        </form>
+    </div>
+    
+</body>
+</html>  

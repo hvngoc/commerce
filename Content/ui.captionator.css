@@ -1,0 +1,6 @@
+.ui-caption {
+  position: absolute;
+  padding: 10px;
+  transition: all 0.5s;
+  margin: 0;
+  line-height: 25px;}

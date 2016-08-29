@@ -1,0 +1,1345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79598F0C-4FC9-4AD7-809F-959F2EF88440}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeadFoot</RootNamespace>
+    <AssemblyName>HeadFoot</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BUS\BUSCatalog.cs" />
+    <Compile Include="Models\BUS\BUSDichVu.cs" />
+    <Compile Include="Models\BUS\BUSGiaoDich.cs" />
+    <Compile Include="Models\BUS\BUSGopYNguoiDung.cs" />
+    <Compile Include="Models\BUS\BUSHinhAnhBoSung.cs" />
+    <Compile Include="Models\BUS\BUSHinhAnhSuKien.cs" />
+    <Compile Include="Models\BUS\BUSHoaDon.cs" />
+    <Compile Include="Models\BUS\BUSSanPham.cs" />
+    <Compile Include="Models\BUS\BUSTaiKhoan.cs" />
+    <Compile Include="Models\BUS\BUSThongTinBoSung.cs" />
+    <Compile Include="Models\BUS\BUSViewModelSanPham.cs" />
+    <Compile Include="Models\DAO\DAOCatalog.cs" />
+    <Compile Include="Models\DAO\DAODichVu.cs" />
+    <Compile Include="Models\DAO\DAOGiaoDich.cs" />
+    <Compile Include="Models\DAO\DAOGopYNguoiDung.cs" />
+    <Compile Include="Models\DAO\DAOHinhAnhBoSung.cs" />
+    <Compile Include="Models\DAO\DAOHinhAnhSuKien.cs" />
+    <Compile Include="Models\DAO\DAOHoaDon.cs" />
+    <Compile Include="Models\DAO\DAOSanPham.cs" />
+    <Compile Include="Models\DAO\DAOTaiKhoan.cs" />
+    <Compile Include="Models\DAO\DAOThongTinBoSung.cs" />
+    <Compile Include="Models\DAO\DAOViewModelSanPham.cs" />
+    <Compile Include="Models\DataProvider.cs" />
+    <Compile Include="Models\DTO\DTOCatalog.cs" />
+    <Compile Include="Models\DTO\DTOGiaoDich.cs" />
+    <Compile Include="Models\DTO\DTOGopYNguoiDung.cs" />
+    <Compile Include="Models\DTO\DTOHinhAnhBoSung.cs" />
+    <Compile Include="Models\DTO\DTOHinhAnhSuKien.cs" />
+    <Compile Include="Models\DTO\DTOHoaDon.cs" />
+    <Compile Include="Models\DTO\DTOSanPham.cs" />
+    <Compile Include="Models\DTO\DTOThongTinBoSung.cs" />
+    <Compile Include="Models\DTO\DTOTaiKhoan.cs" />
+    <Compile Include="Models\DTO\DTOViewModelSanPham.cs" />
+    <Compile Include="Models\Global.cs" />
+    <Compile Include="Models\ProcessStringHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\check-out.css" />
+    <Content Include="Content\customer.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\view_detail.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Icon.png" />
+    <Content Include="Images\Data\Ao1.jpg" />
+    <Content Include="Images\Data\Ao10.jpg" />
+    <Content Include="Images\Data\Ao11.jpg" />
+    <Content Include="Images\Data\Ao12.jpg" />
+    <Content Include="Images\Data\Ao13.jpg" />
+    <Content Include="Images\Data\Ao14.jpg" />
+    <Content Include="Images\Data\Ao15.jpg" />
+    <Content Include="Images\Data\Ao16.jpg" />
+    <Content Include="Images\Data\Ao17.jpg" />
+    <Content Include="Images\Data\Ao18.jpg" />
+    <Content Include="Images\Data\Ao19.jpg" />
+    <Content Include="Images\Data\Ao2.jpg" />
+    <Content Include="Images\Data\Ao20.jpg" />
+    <Content Include="Images\Data\Ao21.jpg" />
+    <Content Include="Images\Data\Ao22.jpg" />
+    <Content Include="Images\Data\Ao23.jpg" />
+    <Content Include="Images\Data\Ao24.jpg" />
+    <Content Include="Images\Data\Ao25.jpg" />
+    <Content Include="Images\Data\Ao26.jpg" />
+    <Content Include="Images\Data\Ao27.jpg" />
+    <Content Include="Images\Data\Ao28.jpg" />
+    <Content Include="Images\Data\Ao29.jpg" />
+    <Content Include="Images\Data\Ao3.jpg" />
+    <Content Include="Images\Data\Ao30.jpg" />
+    <Content Include="Images\Data\Ao31.jpg" />
+    <Content Include="Images\Data\Ao32.jpg" />
+    <Content Include="Images\Data\Ao33.jpg" />
+    <Content Include="Images\Data\Ao34.jpg" />
+    <Content Include="Images\Data\Ao35.jpg" />
+    <Content Include="Images\Data\Ao36.jpg" />
+    <Content Include="Images\Data\Ao37.jpg" />
+    <Content Include="Images\Data\Ao38.jpg" />
+    <Content Include="Images\Data\Ao39.jpg" />
+    <Content Include="Images\Data\Ao4.jpg" />
+    <Content Include="Images\Data\Ao40.jpg" />
+    <Content Include="Images\Data\Ao41.jpg" />
+    <Content Include="Images\Data\Ao5.jpg" />
+    <Content Include="Images\Data\Ao6.jpg" />
+    <Content Include="Images\Data\Ao7.jpg" />
+    <Content Include="Images\Data\Ao8.jpg" />
+    <Content Include="Images\Data\Ao9.jpg" />
+    <Content Include="Images\Data\Dep1.jpg" />
+    <Content Include="Images\Data\Dep10.jpg" />
+    <Content Include="Images\Data\Dep11.jpg" />
+    <Content Include="Images\Data\Dep12.jpg" />
+    <Content Include="Images\Data\Dep13.jpg" />
+    <Content Include="Images\Data\Dep14.jpg" />
+    <Content Include="Images\Data\Dep15.jpg" />
+    <Content Include="Images\Data\Dep16.jpg" />
+    <Content Include="Images\Data\Dep17.jpg" />
+    <Content Include="Images\Data\Dep18.JPG" />
+    <Content Include="Images\Data\Dep19.jpg" />
+    <Content Include="Images\Data\Dep2.jpg" />
+    <Content Include="Images\Data\Dep20.jpg" />
+    <Content Include="Images\Data\Dep21.jpg" />
+    <Content Include="Images\Data\Dep22.jpg" />
+    <Content Include="Images\Data\Dep23.jpg" />
+    <Content Include="Images\Data\Dep24.jpg" />
+    <Content Include="Images\Data\Dep25.jpg" />
+    <Content Include="Images\Data\Dep26.JPG" />
+    <Content Include="Images\Data\Dep27.JPG" />
+    <Content Include="Images\Data\Dep28.JPG" />
+    <Content Include="Images\Data\Dep3.jpg" />
+    <Content Include="Images\Data\Dep4.jpg" />
+    <Content Include="Images\Data\Dep5.jpg" />
+    <Content Include="Images\Data\Dep6.jpg" />
+    <Content Include="Images\Data\Dep7.jpg" />
+    <Content Include="Images\Data\Dep8.jpg" />
+    <Content Include="Images\Data\Dep9.jpg" />
+    <Content Include="Images\Data\Giay1.jpg" />
+    <Content Include="Images\Data\Giay10.jpg" />
+    <Content Include="Images\Data\Giay11.jpg" />
+    <Content Include="Images\Data\Giay12.jpg" />
+    <Content Include="Images\Data\Giay13.jpg" />
+    <Content Include="Images\Data\Giay14.jpg" />
+    <Content Include="Images\Data\Giay15.jpg" />
+    <Content Include="Images\Data\Giay16.jpg" />
+    <Content Include="Images\Data\Giay17.jpg" />
+    <Content Include="Images\Data\Giay18.jpg" />
+    <Content Include="Images\Data\Giay19.jpg" />
+    <Content Include="Images\Data\Giay2.jpg" />
+    <Content Include="Images\Data\Giay20.jpg" />
+    <Content Include="Images\Data\Giay21.jpg" />
+    <Content Include="Images\Data\Giay22.jpg" />
+    <Content Include="Images\Data\Giay23.jpg" />
+    <Content Include="Images\Data\Giay24.jpg" />
+    <Content Include="Images\Data\Giay25.jpg" />
+    <Content Include="Images\Data\Giay26.jpg" />
+    <Content Include="Images\Data\Giay27.jpg" />
+    <Content Include="Images\Data\Giay28.jpg" />
+    <Content Include="Images\Data\Giay29.jpg" />
+    <Content Include="Images\Data\Giay3.jpg" />
+    <Content Include="Images\Data\Giay30.jpg" />
+    <Content Include="Images\Data\Giay31.jpg" />
+    <Content Include="Images\Data\Giay32.jpg" />
+    <Content Include="Images\Data\Giay33.jpg" />
+    <Content Include="Images\Data\Giay34.jpg" />
+    <Content Include="Images\Data\Giay4.jpg" />
+    <Content Include="Images\Data\Giay5.jpg" />
+    <Content Include="Images\Data\Giay6.jpg" />
+    <Content Include="Images\Data\Giay7.jpg" />
+    <Content Include="Images\Data\Giay8.jpg" />
+    <Content Include="Images\Data\Giay9.jpg" />
+    <Content Include="Images\Data\Non1.jpg" />
+    <Content Include="Images\Data\Non10.jpg" />
+    <Content Include="Images\Data\Non11.jpg" />
+    <Content Include="Images\Data\Non12.jpg" />
+    <Content Include="Images\Data\Non13.jpg" />
+    <Content Include="Images\Data\Non14.jpg" />
+    <Content Include="Images\Data\Non15.jpg" />
+    <Content Include="Images\Data\Non16.jpg" />
+    <Content Include="Images\Data\Non17.jpg" />
+    <Content Include="Images\Data\Non18.jpg" />
+    <Content Include="Images\Data\Non19.jpg" />
+    <Content Include="Images\Data\Non2.jpg" />
+    <Content Include="Images\Data\Non20.jpg" />
+    <Content Include="Images\Data\Non3.jpg" />
+    <Content Include="Images\Data\Non4.jpg" />
+    <Content Include="Images\Data\Non5.jpg" />
+    <Content Include="Images\Data\Non6.jpg" />
+    <Content Include="Images\Data\Non7.jpg" />
+    <Content Include="Images\Data\Non8.jpg" />
+    <Content Include="Images\Data\Non9.jpg" />
+    <Content Include="Images\Data\Quan1.jpg" />
+    <Content Include="Images\Data\Quan10.jpg" />
+    <Content Include="Images\Data\Quan11.jpg" />
+    <Content Include="Images\Data\Quan12.jpg" />
+    <Content Include="Images\Data\Quan13.jpg" />
+    <Content Include="Images\Data\Quan14.jpg" />
+    <Content Include="Images\Data\Quan15.jpg" />
+    <Content Include="Images\Data\Quan16.jpg" />
+    <Content Include="Images\Data\Quan17.jpg" />
+    <Content Include="Images\Data\Quan18.jpg" />
+    <Content Include="Images\Data\Quan19.jpg" />
+    <Content Include="Images\Data\Quan2.jpg" />
+    <Content Include="Images\Data\Quan20.jpg" />
+    <Content Include="Images\Data\Quan21.jpg" />
+    <Content Include="Images\Data\Quan22.jpg" />
+    <Content Include="Images\Data\Quan23.jpg" />
+    <Content Include="Images\Data\Quan24.jpg" />
+    <Content Include="Images\Data\Quan25.jpg" />
+    <Content Include="Images\Data\Quan26.jpg" />
+    <Content Include="Images\Data\Quan27.jpg" />
+    <Content Include="Images\Data\Quan28.jpg" />
+    <Content Include="Images\Data\Quan29.jpg" />
+    <Content Include="Images\Data\Quan3.jpg" />
+    <Content Include="Images\Data\Quan30.jpg" />
+    <Content Include="Images\Data\Quan31.jpg" />
+    <Content Include="Images\Data\Quan4.jpg" />
+    <Content Include="Images\Data\Quan5.jpg" />
+    <Content Include="Images\Data\Quan6.jpg" />
+    <Content Include="Images\Data\Quan7.jpg" />
+    <Content Include="Images\Data\Quan8.jpg" />
+    <Content Include="Images\Data\Quan9.jpg" />
+    <Content Include="Images\Data\Vay1.jpg" />
+    <Content Include="Images\Data\Vay10.jpg" />
+    <Content Include="Images\Data\Vay11.jpg" />
+    <Content Include="Images\Data\Vay12.jpg" />
+    <Content Include="Images\Data\Vay13.jpg" />
+    <Content Include="Images\Data\Vay14.jpg" />
+    <Content Include="Images\Data\Vay15.jpg" />
+    <Content Include="Images\Data\Vay16.jpg" />
+    <Content Include="Images\Data\Vay17.jpg" />
+    <Content Include="Images\Data\Vay18.jpg" />
+    <Content Include="Images\Data\Vay19.jpg" />
+    <Content Include="Images\Data\Vay2.jpg" />
+    <Content Include="Images\Data\Vay20.jpg" />
+    <Content Include="Images\Data\Vay21.jpg" />
+    <Content Include="Images\Data\Vay22.jpg" />
+    <Content Include="Images\Data\Vay23.jpg" />
+    <Content Include="Images\Data\Vay24.jpg" />
+    <Content Include="Images\Data\Vay25.jpg" />
+    <Content Include="Images\Data\Vay26.jpg" />
+    <Content Include="Images\Data\Vay27.jpg" />
+    <Content Include="Images\Data\Vay28.jpg" />
+    <Content Include="Images\Data\Vay29.jpg" />
+    <Content Include="Images\Data\Vay3.jpg" />
+    <Content Include="Images\Data\Vay30.jpg" />
+    <Content Include="Images\Data\Vay31.jpg" />
+    <Content Include="Images\Data\Vay32.jpg" />
+    <Content Include="Images\Data\Vay33.jpg" />
+    <Content Include="Images\Data\Vay34.jpg" />
+    <Content Include="Images\Data\Vay35.jpg" />
+    <Content Include="Images\Data\Vay36.jpg" />
+    <Content Include="Images\Data\Vay37.jpg" />
+    <Content Include="Images\Data\Vay38.jpg" />
+    <Content Include="Images\Data\Vay39.jpg" />
+    <Content Include="Images\Data\Vay4.jpg" />
+    <Content Include="Images\Data\Vay40.jpg" />
+    <Content Include="Images\Data\Vay41.jpg" />
+    <Content Include="Images\Data\Vay42.jpg" />
+    <Content Include="Images\Data\Vay43.jpg" />
+    <Content Include="Images\Data\Vay44.jpg" />
+    <Content Include="Images\Data\Vay5.jpg" />
+    <Content Include="Images\Data\Vay6.jpg" />
+    <Content Include="Images\Data\Vay7.jpg" />
+    <Content Include="Images\Data\Vay8.jpg" />
+    <Content Include="Images\Data\Vay9.jpg" />
+    <Content Include="Images\Detail\Ao10_1.jpg" />
+    <Content Include="Images\Detail\Ao10_2.jpg" />
+    <Content Include="Images\Detail\Ao10_3.jpg" />
+    <Content Include="Images\Detail\Ao10_4.jpg" />
+    <Content Include="Images\Detail\Ao10_5.jpg" />
+    <Content Include="Images\Detail\Ao11_1.jpg" />
+    <Content Include="Images\Detail\Ao11_2.jpg" />
+    <Content Include="Images\Detail\Ao11_3.jpg" />
+    <Content Include="Images\Detail\Ao11_4.jpg" />
+    <Content Include="Images\Detail\Ao11_5.jpg" />
+    <Content Include="Images\Detail\Ao12_1.jpg" />
+    <Content Include="Images\Detail\Ao12_2.jpg" />
+    <Content Include="Images\Detail\Ao12_3.jpg" />
+    <Content Include="Images\Detail\Ao12_4.jpg" />
+    <Content Include="Images\Detail\Ao12_5.jpg" />
+    <Content Include="Images\Detail\Ao13_1.jpg" />
+    <Content Include="Images\Detail\Ao13_2.jpg" />
+    <Content Include="Images\Detail\Ao13_3.jpg" />
+    <Content Include="Images\Detail\Ao13_4.jpg" />
+    <Content Include="Images\Detail\Ao13_5.jpg" />
+    <Content Include="Images\Detail\Ao14_1.jpg" />
+    <Content Include="Images\Detail\Ao14_2.jpg" />
+    <Content Include="Images\Detail\Ao14_3.jpg" />
+    <Content Include="Images\Detail\Ao14_4.jpg" />
+    <Content Include="Images\Detail\Ao14_5.jpg" />
+    <Content Include="Images\Detail\Ao15_1.jpg" />
+    <Content Include="Images\Detail\Ao15_2.jpg" />
+    <Content Include="Images\Detail\Ao15_3.jpg" />
+    <Content Include="Images\Detail\Ao15_4.jpg" />
+    <Content Include="Images\Detail\Ao15_5.jpg" />
+    <Content Include="Images\Detail\Ao16_1.jpg" />
+    <Content Include="Images\Detail\Ao16_2.jpg" />
+    <Content Include="Images\Detail\Ao16_3.jpg" />
+    <Content Include="Images\Detail\Ao16_4.jpg" />
+    <Content Include="Images\Detail\Ao16_5.jpg" />
+    <Content Include="Images\Detail\Ao17_1.jpg" />
+    <Content Include="Images\Detail\Ao17_2.jpg" />
+    <Content Include="Images\Detail\Ao17_3.jpg" />
+    <Content Include="Images\Detail\Ao17_4.jpg" />
+    <Content Include="Images\Detail\Ao17_5.jpg" />
+    <Content Include="Images\Detail\Ao18_1.jpg" />
+    <Content Include="Images\Detail\Ao18_2.jpg" />
+    <Content Include="Images\Detail\Ao18_3.jpg" />
+    <Content Include="Images\Detail\Ao18_4.jpg" />
+    <Content Include="Images\Detail\Ao18_5.jpg" />
+    <Content Include="Images\Detail\Ao19_1.jpg" />
+    <Content Include="Images\Detail\Ao19_2.jpg" />
+    <Content Include="Images\Detail\Ao19_3.jpg" />
+    <Content Include="Images\Detail\Ao19_4.jpg" />
+    <Content Include="Images\Detail\Ao19_5.jpg" />
+    <Content Include="Images\Detail\Ao1_1.jpg" />
+    <Content Include="Images\Detail\Ao1_2.jpg" />
+    <Content Include="Images\Detail\Ao1_3.jpg" />
+    <Content Include="Images\Detail\Ao1_4.jpg" />
+    <Content Include="Images\Detail\Ao20_1.jpg" />
+    <Content Include="Images\Detail\Ao20_2.jpg" />
+    <Content Include="Images\Detail\Ao20_3.jpg" />
+    <Content Include="Images\Detail\Ao20_4.jpg" />
+    <Content Include="Images\Detail\Ao20_5.jpg" />
+    <Content Include="Images\Detail\Ao21_1.jpg" />
+    <Content Include="Images\Detail\Ao21_2.jpg" />
+    <Content Include="Images\Detail\Ao21_3.jpg" />
+    <Content Include="Images\Detail\Ao21_4.jpg" />
+    <Content Include="Images\Detail\Ao21_5.jpg" />
+    <Content Include="Images\Detail\Ao22_1.jpg" />
+    <Content Include="Images\Detail\Ao22_2.jpg" />
+    <Content Include="Images\Detail\Ao22_3.jpg" />
+    <Content Include="Images\Detail\Ao22_4.jpg" />
+    <Content Include="Images\Detail\Ao22_5.jpg" />
+    <Content Include="Images\Detail\Ao23_1.jpg" />
+    <Content Include="Images\Detail\Ao23_2.jpg" />
+    <Content Include="Images\Detail\Ao23_3.jpg" />
+    <Content Include="Images\Detail\Ao23_4.jpg" />
+    <Content Include="Images\Detail\Ao23_5.jpg" />
+    <Content Include="Images\Detail\Ao24_1.jpg" />
+    <Content Include="Images\Detail\Ao24_2.jpg" />
+    <Content Include="Images\Detail\Ao24_3.jpg" />
+    <Content Include="Images\Detail\Ao24_4.jpg" />
+    <Content Include="Images\Detail\Ao24_5.jpg" />
+    <Content Include="Images\Detail\Ao25_1.jpg" />
+    <Content Include="Images\Detail\Ao25_2.jpg" />
+    <Content Include="Images\Detail\Ao25_3.jpg" />
+    <Content Include="Images\Detail\Ao25_4.jpg" />
+    <Content Include="Images\Detail\Ao25_5.jpg" />
+    <Content Include="Images\Detail\Ao26_1.jpg" />
+    <Content Include="Images\Detail\Ao26_2.jpg" />
+    <Content Include="Images\Detail\Ao26_3.jpg" />
+    <Content Include="Images\Detail\Ao26_4.jpg" />
+    <Content Include="Images\Detail\Ao26_5.jpg" />
+    <Content Include="Images\Detail\Ao27_1.jpg" />
+    <Content Include="Images\Detail\Ao27_2.jpg" />
+    <Content Include="Images\Detail\Ao27_3.jpg" />
+    <Content Include="Images\Detail\Ao27_4.jpg" />
+    <Content Include="Images\Detail\Ao27_5.jpg" />
+    <Content Include="Images\Detail\Ao28_1.jpg" />
+    <Content Include="Images\Detail\Ao28_2.jpg" />
+    <Content Include="Images\Detail\Ao28_3.jpg" />
+    <Content Include="Images\Detail\Ao28_4.jpg" />
+    <Content Include="Images\Detail\Ao28_5.jpg" />
+    <Content Include="Images\Detail\Ao29_1.jpg" />
+    <Content Include="Images\Detail\Ao29_2.jpg" />
+    <Content Include="Images\Detail\Ao29_3.jpg" />
+    <Content Include="Images\Detail\Ao29_4.jpg" />
+    <Content Include="Images\Detail\Ao29_5.jpg" />
+    <Content Include="Images\Detail\Ao2_1.jpg" />
+    <Content Include="Images\Detail\Ao2_2.jpg" />
+    <Content Include="Images\Detail\Ao2_3.jpg" />
+    <Content Include="Images\Detail\Ao2_4.jpg" />
+    <Content Include="Images\Detail\Ao2_5.jpg" />
+    <Content Include="Images\Detail\Ao2_6.jpg" />
+    <Content Include="Images\Detail\Ao30_1.jpg" />
+    <Content Include="Images\Detail\Ao30_2.jpg" />
+    <Content Include="Images\Detail\Ao30_3.jpg" />
+    <Content Include="Images\Detail\Ao30_4.jpg" />
+    <Content Include="Images\Detail\Ao30_5.jpg" />
+    <Content Include="Images\Detail\Ao31_1.jpg" />
+    <Content Include="Images\Detail\Ao31_2.jpg" />
+    <Content Include="Images\Detail\Ao31_3.jpg" />
+    <Content Include="Images\Detail\Ao31_4.jpg" />
+    <Content Include="Images\Detail\Ao31_5.jpg" />
+    <Content Include="Images\Detail\Ao32_1.jpg" />
+    <Content Include="Images\Detail\Ao32_2.jpg" />
+    <Content Include="Images\Detail\Ao32_3.jpg" />
+    <Content Include="Images\Detail\Ao32_4.jpg" />
+    <Content Include="Images\Detail\Ao32_5.jpg" />
+    <Content Include="Images\Detail\Ao33_1.jpg" />
+    <Content Include="Images\Detail\Ao33_2.jpg" />
+    <Content Include="Images\Detail\Ao33_3.jpg" />
+    <Content Include="Images\Detail\Ao33_4.jpg" />
+    <Content Include="Images\Detail\Ao33_5.jpg" />
+    <Content Include="Images\Detail\Ao34_1.jpg" />
+    <Content Include="Images\Detail\Ao34_2.jpg" />
+    <Content Include="Images\Detail\Ao34_3.jpg" />
+    <Content Include="Images\Detail\Ao34_4.jpg" />
+    <Content Include="Images\Detail\Ao34_5.jpg" />
+    <Content Include="Images\Detail\Ao35_1.jpg" />
+    <Content Include="Images\Detail\Ao35_2.jpg" />
+    <Content Include="Images\Detail\Ao35_3.jpg" />
+    <Content Include="Images\Detail\Ao35_4.jpg" />
+    <Content Include="Images\Detail\Ao35_5.jpg" />
+    <Content Include="Images\Detail\Ao36_1.jpg" />
+    <Content Include="Images\Detail\Ao36_2.jpg" />
+    <Content Include="Images\Detail\Ao36_3.jpg" />
+    <Content Include="Images\Detail\Ao36_4.jpg" />
+    <Content Include="Images\Detail\Ao36_5.jpg" />
+    <Content Include="Images\Detail\Ao37_1.jpg" />
+    <Content Include="Images\Detail\Ao37_2.jpg" />
+    <Content Include="Images\Detail\Ao37_3.jpg" />
+    <Content Include="Images\Detail\Ao37_4.jpg" />
+    <Content Include="Images\Detail\Ao37_5.jpg" />
+    <Content Include="Images\Detail\Ao38_1.jpg" />
+    <Content Include="Images\Detail\Ao38_2.jpg" />
+    <Content Include="Images\Detail\Ao38_3.jpg" />
+    <Content Include="Images\Detail\Ao38_4.jpg" />
+    <Content Include="Images\Detail\Ao38_5.jpg" />
+    <Content Include="Images\Detail\Ao39_1.jpg" />
+    <Content Include="Images\Detail\Ao39_2.jpg" />
+    <Content Include="Images\Detail\Ao39_3.jpg" />
+    <Content Include="Images\Detail\Ao39_4.jpg" />
+    <Content Include="Images\Detail\Ao39_5.jpg" />
+    <Content Include="Images\Detail\Ao3_1.jpg" />
+    <Content Include="Images\Detail\Ao3_2.jpg" />
+    <Content Include="Images\Detail\Ao3_3.jpg" />
+    <Content Include="Images\Detail\Ao3_4.jpg" />
+    <Content Include="Images\Detail\Ao3_5.jpg" />
+    <Content Include="Images\Detail\Ao40_1.jpg" />
+    <Content Include="Images\Detail\Ao40_2.jpg" />
+    <Content Include="Images\Detail\Ao40_3.jpg" />
+    <Content Include="Images\Detail\Ao40_4.jpg" />
+    <Content Include="Images\Detail\Ao40_5.jpg" />
+    <Content Include="Images\Detail\Ao41_1.jpg" />
+    <Content Include="Images\Detail\Ao41_2.jpg" />
+    <Content Include="Images\Detail\Ao41_3.jpg" />
+    <Content Include="Images\Detail\Ao41_4.jpg" />
+    <Content Include="Images\Detail\Ao41_5.jpg" />
+    <Content Include="Images\Detail\Ao4_1.jpg" />
+    <Content Include="Images\Detail\Ao4_2.jpg" />
+    <Content Include="Images\Detail\Ao4_3.jpg" />
+    <Content Include="Images\Detail\Ao5_1.jpg" />
+    <Content Include="Images\Detail\Ao5_2.jpg" />
+    <Content Include="Images\Detail\Ao5_3.jpg" />
+    <Content Include="Images\Detail\Ao5_4.jpg" />
+    <Content Include="Images\Detail\Ao5_5.jpg" />
+    <Content Include="Images\Detail\Ao6_1.jpg" />
+    <Content Include="Images\Detail\Ao6_2.jpg" />
+    <Content Include="Images\Detail\Ao6_3.jpg" />
+    <Content Include="Images\Detail\Ao6_4.jpg" />
+    <Content Include="Images\Detail\Ao6_5.jpg" />
+    <Content Include="Images\Detail\Ao7_1.jpg" />
+    <Content Include="Images\Detail\Ao7_2.jpg" />
+    <Content Include="Images\Detail\Ao7_3.jpg" />
+    <Content Include="Images\Detail\Ao7_4.jpg" />
+    <Content Include="Images\Detail\Ao7_5.jpg" />
+    <Content Include="Images\Detail\Ao8_1.jpg" />
+    <Content Include="Images\Detail\Ao8_2.jpg" />
+    <Content Include="Images\Detail\Ao8_3.jpg" />
+    <Content Include="Images\Detail\Ao8_4.jpg" />
+    <Content Include="Images\Detail\Ao8_5.jpg" />
+    <Content Include="Images\Detail\Ao9_1.jpg" />
+    <Content Include="Images\Detail\Ao9_2.jpg" />
+    <Content Include="Images\Detail\Ao9_3.jpg" />
+    <Content Include="Images\Detail\Ao9_4.jpg" />
+    <Content Include="Images\Detail\Ao9_5.jpg" />
+    <Content Include="Images\Detail\Dep10_1.jpg" />
+    <Content Include="Images\Detail\Dep10_2.jpg" />
+    <Content Include="Images\Detail\Dep10_3.jpg" />
+    <Content Include="Images\Detail\Dep10_4.jpg" />
+    <Content Include="Images\Detail\Dep11_1.jpg" />
+    <Content Include="Images\Detail\Dep11_2.jpg" />
+    <Content Include="Images\Detail\Dep11_3.jpg" />
+    <Content Include="Images\Detail\Dep12_1.jpg" />
+    <Content Include="Images\Detail\Dep12_2.jpg" />
+    <Content Include="Images\Detail\Dep12_3.jpg" />
+    <Content Include="Images\Detail\Dep13_1.jpg" />
+    <Content Include="Images\Detail\Dep13_2.jpg" />
+    <Content Include="Images\Detail\Dep13_3.jpg" />
+    <Content Include="Images\Detail\Dep13_4.jpg" />
+    <Content Include="Images\Detail\Dep14_1.jpg" />
+    <Content Include="Images\Detail\Dep14_2.jpg" />
+    <Content Include="Images\Detail\Dep14_3.jpg" />
+    <Content Include="Images\Detail\Dep14_4.jpg" />
+    <Content Include="Images\Detail\Dep15_1.jpg" />
+    <Content Include="Images\Detail\Dep15_2.jpg" />
+    <Content Include="Images\Detail\Dep15_3.jpg" />
+    <Content Include="Images\Detail\Dep15_4.jpg" />
+    <Content Include="Images\Detail\Dep16_1.jpg" />
+    <Content Include="Images\Detail\Dep16_2.jpg" />
+    <Content Include="Images\Detail\Dep16_3.jpg" />
+    <Content Include="Images\Detail\Dep16_4.jpg" />
+    <Content Include="Images\Detail\Dep17_1.jpg" />
+    <Content Include="Images\Detail\Dep17_2.jpg" />
+    <Content Include="Images\Detail\Dep17_3.jpg" />
+    <Content Include="Images\Detail\Dep17_4.jpg" />
+    <Content Include="Images\Detail\Dep18_1.jpg" />
+    <Content Include="Images\Detail\Dep18_2.jpg" />
+    <Content Include="Images\Detail\Dep18_3.jpg" />
+    <Content Include="Images\Detail\Dep18_4.jpg" />
+    <Content Include="Images\Detail\Dep19_1.jpg" />
+    <Content Include="Images\Detail\Dep19_2.jpg" />
+    <Content Include="Images\Detail\Dep19_3.jpg" />
+    <Content Include="Images\Detail\Dep19_4.jpg" />
+    <Content Include="Images\Detail\Dep1_1.jpg" />
+    <Content Include="Images\Detail\Dep1_2.jpg" />
+    <Content Include="Images\Detail\Dep1_3.jpg" />
+    <Content Include="Images\Detail\Dep20_1.jpg" />
+    <Content Include="Images\Detail\Dep20_2.jpg" />
+    <Content Include="Images\Detail\Dep20_3.jpg" />
+    <Content Include="Images\Detail\Dep20_4.jpg" />
+    <Content Include="Images\Detail\Dep21_1.jpg" />
+    <Content Include="Images\Detail\Dep21_2.jpg" />
+    <Content Include="Images\Detail\Dep21_3.jpg" />
+    <Content Include="Images\Detail\Dep21_4.jpg" />
+    <Content Include="Images\Detail\Dep22_1.jpg" />
+    <Content Include="Images\Detail\Dep22_2.jpg" />
+    <Content Include="Images\Detail\Dep22_3.jpg" />
+    <Content Include="Images\Detail\Dep22_4.jpg" />
+    <Content Include="Images\Detail\Dep23_1.jpg" />
+    <Content Include="Images\Detail\Dep23_2.jpg" />
+    <Content Include="Images\Detail\Dep23_3.jpg" />
+    <Content Include="Images\Detail\Dep23_4.jpg" />
+    <Content Include="Images\Detail\Dep24_1.jpg" />
+    <Content Include="Images\Detail\Dep24_2.jpg" />
+    <Content Include="Images\Detail\Dep24_3.jpg" />
+    <Content Include="Images\Detail\Dep24_4.jpg" />
+    <Content Include="Images\Detail\Dep25_1.jpg" />
+    <Content Include="Images\Detail\Dep25_2.jpg" />
+    <Content Include="Images\Detail\Dep25_3.jpg" />
+    <Content Include="Images\Detail\Dep25_4.jpg" />
+    <Content Include="Images\Detail\Dep26_1.JPG" />
+    <Content Include="Images\Detail\Dep26_2.JPG" />
+    <Content Include="Images\Detail\Dep26_3.JPG" />
+    <Content Include="Images\Detail\Dep26_4.JPG" />
+    <Content Include="Images\Detail\Dep27_1.JPG" />
+    <Content Include="Images\Detail\Dep27_2.JPG" />
+    <Content Include="Images\Detail\Dep27_3.JPG" />
+    <Content Include="Images\Detail\Dep27_4.JPG" />
+    <Content Include="Images\Detail\Dep28_1.JPG" />
+    <Content Include="Images\Detail\Dep28_2.JPG" />
+    <Content Include="Images\Detail\Dep28_3.JPG" />
+    <Content Include="Images\Detail\Dep28_4.JPG" />
+    <Content Include="Images\Detail\Dep2_1.jpg" />
+    <Content Include="Images\Detail\Dep2_2.jpg" />
+    <Content Include="Images\Detail\Dep2_3.jpg" />
+    <Content Include="Images\Detail\Dep3_1.jpg" />
+    <Content Include="Images\Detail\Dep3_2.jpg" />
+    <Content Include="Images\Detail\Dep3_3.jpg" />
+    <Content Include="Images\Detail\Dep3_4.jpg" />
+    <Content Include="Images\Detail\Dep4_1.jpg" />
+    <Content Include="Images\Detail\Dep4_2.jpg" />
+    <Content Include="Images\Detail\Dep4_3.jpg" />
+    <Content Include="Images\Detail\Dep5_1.jpg" />
+    <Content Include="Images\Detail\Dep5_2.jpg" />
+    <Content Include="Images\Detail\Dep5_3.jpg" />
+    <Content Include="Images\Detail\Dep5_4.jpg" />
+    <Content Include="Images\Detail\Dep6_1.jpg" />
+    <Content Include="Images\Detail\Dep6_2.jpg" />
+    <Content Include="Images\Detail\Dep6_3.jpg" />
+    <Content Include="Images\Detail\Dep6_4.jpg" />
+    <Content Include="Images\Detail\Dep7_1.jpg" />
+    <Content Include="Images\Detail\Dep7_2.jpg" />
+    <Content Include="Images\Detail\Dep7_3.jpg" />
+    <Content Include="Images\Detail\Dep7_4.jpg" />
+    <Content Include="Images\Detail\Dep8_1.jpg" />
+    <Content Include="Images\Detail\Dep8_2.jpg" />
+    <Content Include="Images\Detail\Dep8_3.jpg" />
+    <Content Include="Images\Detail\Dep8_4.jpg" />
+    <Content Include="Images\Detail\Dep9_1.jpg" />
+    <Content Include="Images\Detail\Dep9_2.jpg" />
+    <Content Include="Images\Detail\Dep9_3.jpg" />
+    <Content Include="Images\Detail\Giay10_1.jpg" />
+    <Content Include="Images\Detail\Giay10_2.jpg" />
+    <Content Include="Images\Detail\Giay10_3.jpg" />
+    <Content Include="Images\Detail\Giay10_4.jpg" />
+    <Content Include="Images\Detail\Giay11_1.jpg" />
+    <Content Include="Images\Detail\Giay11_2.jpg" />
+    <Content Include="Images\Detail\Giay11_3.jpg" />
+    <Content Include="Images\Detail\Giay11_4.jpg" />
+    <Content Include="Images\Detail\Giay12_1.jpg" />
+    <Content Include="Images\Detail\Giay12_2.jpg" />
+    <Content Include="Images\Detail\Giay12_3.jpg" />
+    <Content Include="Images\Detail\Giay12_4.jpg" />
+    <Content Include="Images\Detail\Giay13_1.jpg" />
+    <Content Include="Images\Detail\Giay13_2.jpg" />
+    <Content Include="Images\Detail\Giay13_3.jpg" />
+    <Content Include="Images\Detail\Giay13_4.jpg" />
+    <Content Include="Images\Detail\Giay14_1.jpg" />
+    <Content Include="Images\Detail\Giay14_2.jpg" />
+    <Content Include="Images\Detail\Giay14_3.jpg" />
+    <Content Include="Images\Detail\Giay14_4.jpg" />
+    <Content Include="Images\Detail\Giay15_1.jpg" />
+    <Content Include="Images\Detail\Giay15_2.jpg" />
+    <Content Include="Images\Detail\Giay15_3.jpg" />
+    <Content Include="Images\Detail\Giay15_4.jpg" />
+    <Content Include="Images\Detail\Giay16_1.jpg" />
+    <Content Include="Images\Detail\Giay16_2.jpg" />
+    <Content Include="Images\Detail\Giay16_3.jpg" />
+    <Content Include="Images\Detail\Giay16_4.jpg" />
+    <Content Include="Images\Detail\Giay17_1.jpg" />
+    <Content Include="Images\Detail\Giay17_2.jpg" />
+    <Content Include="Images\Detail\Giay17_3.jpg" />
+    <Content Include="Images\Detail\Giay17_4.jpg" />
+    <Content Include="Images\Detail\Giay18_1.jpg" />
+    <Content Include="Images\Detail\Giay18_2.jpg" />
+    <Content Include="Images\Detail\Giay18_3.jpg" />
+    <Content Include="Images\Detail\Giay18_4.jpg" />
+    <Content Include="Images\Detail\Giay19_1.jpg" />
+    <Content Include="Images\Detail\Giay19_2.jpg" />
+    <Content Include="Images\Detail\Giay19_3.jpg" />
+    <Content Include="Images\Detail\Giay19_4.jpg" />
+    <Content Include="Images\Detail\Giay1_1.jpg" />
+    <Content Include="Images\Detail\Giay1_2.jpg" />
+    <Content Include="Images\Detail\Giay1_3.jpg" />
+    <Content Include="Images\Detail\Giay1_4.jpg" />
+    <Content Include="Images\Detail\Giay20_1.jpg" />
+    <Content Include="Images\Detail\Giay20_2.jpg" />
+    <Content Include="Images\Detail\Giay20_3.jpg" />
+    <Content Include="Images\Detail\Giay20_4.jpg" />
+    <Content Include="Images\Detail\Giay21_1.jpg" />
+    <Content Include="Images\Detail\Giay21_2.jpg" />
+    <Content Include="Images\Detail\Giay21_3.jpg" />
+    <Content Include="Images\Detail\Giay21_4.jpg" />
+    <Content Include="Images\Detail\Giay22_1.jpg" />
+    <Content Include="Images\Detail\Giay22_2.jpg" />
+    <Content Include="Images\Detail\Giay22_3.jpg" />
+    <Content Include="Images\Detail\Giay22_4.jpg" />
+    <Content Include="Images\Detail\Giay23_1.jpg" />
+    <Content Include="Images\Detail\Giay23_2.jpg" />
+    <Content Include="Images\Detail\Giay23_3.jpg" />
+    <Content Include="Images\Detail\Giay23_4.jpg" />
+    <Content Include="Images\Detail\Giay24_1.jpg" />
+    <Content Include="Images\Detail\Giay24_2.jpg" />
+    <Content Include="Images\Detail\Giay24_3.jpg" />
+    <Content Include="Images\Detail\Giay24_4.jpg" />
+    <Content Include="Images\Detail\Giay25_1.jpg" />
+    <Content Include="Images\Detail\Giay25_2.jpg" />
+    <Content Include="Images\Detail\Giay25_3.jpg" />
+    <Content Include="Images\Detail\Giay25_4.jpg" />
+    <Content Include="Images\Detail\Giay26_1.jpg" />
+    <Content Include="Images\Detail\Giay26_2.jpg" />
+    <Content Include="Images\Detail\Giay26_3.jpg" />
+    <Content Include="Images\Detail\Giay26_4.jpg" />
+    <Content Include="Images\Detail\Giay27_1.jpg" />
+    <Content Include="Images\Detail\Giay27_2.jpg" />
+    <Content Include="Images\Detail\Giay27_3.jpg" />
+    <Content Include="Images\Detail\Giay27_4.jpg" />
+    <Content Include="Images\Detail\Giay28_1.jpg" />
+    <Content Include="Images\Detail\Giay28_2.jpg" />
+    <Content Include="Images\Detail\Giay28_3.jpg" />
+    <Content Include="Images\Detail\Giay28_4.jpg" />
+    <Content Include="Images\Detail\Giay29_1.jpg" />
+    <Content Include="Images\Detail\Giay29_2.jpg" />
+    <Content Include="Images\Detail\Giay29_3.jpg" />
+    <Content Include="Images\Detail\Giay29_4.jpg" />
+    <Content Include="Images\Detail\Giay2_1.jpg" />
+    <Content Include="Images\Detail\Giay2_2.jpg" />
+    <Content Include="Images\Detail\Giay2_3.jpg" />
+    <Content Include="Images\Detail\Giay2_4.jpg" />
+    <Content Include="Images\Detail\Giay30_1.jpg" />
+    <Content Include="Images\Detail\Giay30_2.jpg" />
+    <Content Include="Images\Detail\Giay30_3.jpg" />
+    <Content Include="Images\Detail\Giay30_4.jpg" />
+    <Content Include="Images\Detail\Giay31_1.jpg" />
+    <Content Include="Images\Detail\Giay31_2.jpg" />
+    <Content Include="Images\Detail\Giay31_3.jpg" />
+    <Content Include="Images\Detail\Giay31_4.jpg" />
+    <Content Include="Images\Detail\Giay32_1.jpg" />
+    <Content Include="Images\Detail\Giay32_2.jpg" />
+    <Content Include="Images\Detail\Giay32_3.jpg" />
+    <Content Include="Images\Detail\Giay32_4.jpg" />
+    <Content Include="Images\Detail\Giay33_1.jpg" />
+    <Content Include="Images\Detail\Giay33_2.jpg" />
+    <Content Include="Images\Detail\Giay33_3.jpg" />
+    <Content Include="Images\Detail\Giay33_4.jpg" />
+    <Content Include="Images\Detail\Giay34_1.jpg" />
+    <Content Include="Images\Detail\Giay34_2.jpg" />
+    <Content Include="Images\Detail\Giay34_3.jpg" />
+    <Content Include="Images\Detail\Giay34_4.jpg" />
+    <Content Include="Images\Detail\Giay3_1.jpg" />
+    <Content Include="Images\Detail\Giay3_2.jpg" />
+    <Content Include="Images\Detail\Giay3_3.jpg" />
+    <Content Include="Images\Detail\Giay3_4.jpg" />
+    <Content Include="Images\Detail\Giay3_5.jpg" />
+    <Content Include="Images\Detail\Giay4_1.jpg" />
+    <Content Include="Images\Detail\Giay4_2.jpg" />
+    <Content Include="Images\Detail\Giay4_3.jpg" />
+    <Content Include="Images\Detail\Giay4_4.jpg" />
+    <Content Include="Images\Detail\Giay5_1.jpg" />
+    <Content Include="Images\Detail\Giay5_2.jpg" />
+    <Content Include="Images\Detail\Giay5_3.jpg" />
+    <Content Include="Images\Detail\Giay5_4.jpg" />
+    <Content Include="Images\Detail\Giay6_1.jpg" />
+    <Content Include="Images\Detail\Giay6_2.jpg" />
+    <Content Include="Images\Detail\Giay6_3.jpg" />
+    <Content Include="Images\Detail\Giay6_4.jpg" />
+    <Content Include="Images\Detail\Giay7_1.jpg" />
+    <Content Include="Images\Detail\Giay7_2.jpg" />
+    <Content Include="Images\Detail\Giay7_3.jpg" />
+    <Content Include="Images\Detail\Giay7_4.jpg" />
+    <Content Include="Images\Detail\Giay8_1.jpg" />
+    <Content Include="Images\Detail\Giay8_2.jpg" />
+    <Content Include="Images\Detail\Giay8_3.jpg" />
+    <Content Include="Images\Detail\Giay8_4.jpg" />
+    <Content Include="Images\Detail\Giay9_1.jpg" />
+    <Content Include="Images\Detail\Giay9_2.jpg" />
+    <Content Include="Images\Detail\Giay9_3.jpg" />
+    <Content Include="Images\Detail\Giay9_4.jpg" />
+    <Content Include="Images\Detail\Non10_1.jpg" />
+    <Content Include="Images\Detail\Non10_2.jpg" />
+    <Content Include="Images\Detail\Non11_1.jpg" />
+    <Content Include="Images\Detail\Non11_2.jpg" />
+    <Content Include="Images\Detail\Non11_3.jpg" />
+    <Content Include="Images\Detail\Non12_1.jpg" />
+    <Content Include="Images\Detail\Non12_2.jpg" />
+    <Content Include="Images\Detail\Non12_3.jpg" />
+    <Content Include="Images\Detail\Non13_1.jpg" />
+    <Content Include="Images\Detail\Non13_2.jpg" />
+    <Content Include="Images\Detail\Non13_3.jpg" />
+    <Content Include="Images\Detail\Non14_1.jpg" />
+    <Content Include="Images\Detail\Non14_2.jpg" />
+    <Content Include="Images\Detail\Non14_3.jpg" />
+    <Content Include="Images\Detail\Non14_4.jpg" />
+    <Content Include="Images\Detail\Non15_1.jpg" />
+    <Content Include="Images\Detail\Non15_2.jpg" />
+    <Content Include="Images\Detail\Non15_3.jpg" />
+    <Content Include="Images\Detail\Non15_4.jpg" />
+    <Content Include="Images\Detail\Non16_1.jpg" />
+    <Content Include="Images\Detail\Non16_2.jpg" />
+    <Content Include="Images\Detail\Non16_3.jpg" />
+    <Content Include="Images\Detail\Non16_4.jpg" />
+    <Content Include="Images\Detail\Non17_1.jpg" />
+    <Content Include="Images\Detail\Non17_2.jpg" />
+    <Content Include="Images\Detail\Non17_3.jpg" />
+    <Content Include="Images\Detail\Non17_4.jpg" />
+    <Content Include="Images\Detail\Non18_1.jpg" />
+    <Content Include="Images\Detail\Non18_2.jpg" />
+    <Content Include="Images\Detail\Non18_3.jpg" />
+    <Content Include="Images\Detail\Non18_4.jpg" />
+    <Content Include="Images\Detail\Non19_1.jpg" />
+    <Content Include="Images\Detail\Non19_2.jpg" />
+    <Content Include="Images\Detail\Non19_3.jpg" />
+    <Content Include="Images\Detail\Non1_1.jpg" />
+    <Content Include="Images\Detail\Non1_2.jpg" />
+    <Content Include="Images\Detail\Non1_3.jpg" />
+    <Content Include="Images\Detail\Non20_1.jpg" />
+    <Content Include="Images\Detail\Non20_2.jpg" />
+    <Content Include="Images\Detail\Non20_3.jpg" />
+    <Content Include="Images\Detail\Non20_4.jpg" />
+    <Content Include="Images\Detail\Non2_1.jpg" />
+    <Content Include="Images\Detail\Non2_2.jpg" />
+    <Content Include="Images\Detail\Non2_3.jpg" />
+    <Content Include="Images\Detail\Non3_1.jpg" />
+    <Content Include="Images\Detail\Non3_2.jpg" />
+    <Content Include="Images\Detail\Non3_3.jpg" />
+    <Content Include="Images\Detail\Non4_1.jpg" />
+    <Content Include="Images\Detail\Non4_2.jpg" />
+    <Content Include="Images\Detail\Non4_3.jpg" />
+    <Content Include="Images\Detail\Non4_4.jpg" />
+    <Content Include="Images\Detail\Non5_1.jpg" />
+    <Content Include="Images\Detail\Non5_2.jpg" />
+    <Content Include="Images\Detail\Non5_3.jpg" />
+    <Content Include="Images\Detail\Non5_4.jpg" />
+    <Content Include="Images\Detail\Non6_1.jpg" />
+    <Content Include="Images\Detail\Non6_2.jpg" />
+    <Content Include="Images\Detail\Non6_3.jpg" />
+    <Content Include="Images\Detail\Non6_4.jpg" />
+    <Content Include="Images\Detail\Non7_1.jpg" />
+    <Content Include="Images\Detail\Non7_2.jpg" />
+    <Content Include="Images\Detail\Non7_3.jpg" />
+    <Content Include="Images\Detail\Non8_1.jpg" />
+    <Content Include="Images\Detail\Non8_2.jpg" />
+    <Content Include="Images\Detail\Non8_3.jpg" />
+    <Content Include="Images\Detail\Non9_1.jpg" />
+    <Content Include="Images\Detail\Non9_2.jpg" />
+    <Content Include="Images\Detail\Non9_3.jpg" />
+    <Content Include="Images\Detail\Quan10_1.jpg" />
+    <Content Include="Images\Detail\Quan10_2.jpg" />
+    <Content Include="Images\Detail\Quan10_3.jpg" />
+    <Content Include="Images\Detail\Quan10_4.jpg" />
+    <Content Include="Images\Detail\Quan11_1.jpg" />
+    <Content Include="Images\Detail\Quan11_2.jpg" />
+    <Content Include="Images\Detail\Quan11_3.jpg" />
+    <Content Include="Images\Detail\Quan11_4.jpg" />
+    <Content Include="Images\Detail\Quan12_1.jpg" />
+    <Content Include="Images\Detail\Quan12_2.jpg" />
+    <Content Include="Images\Detail\Quan12_3.jpg" />
+    <Content Include="Images\Detail\Quan12_4.jpg" />
+    <Content Include="Images\Detail\Quan13_1.jpg" />
+    <Content Include="Images\Detail\Quan13_2.jpg" />
+    <Content Include="Images\Detail\Quan13_3.jpg" />
+    <Content Include="Images\Detail\Quan13_4.jpg" />
+    <Content Include="Images\Detail\Quan14_1.jpg" />
+    <Content Include="Images\Detail\Quan14_2.jpg" />
+    <Content Include="Images\Detail\Quan14_3.jpg" />
+    <Content Include="Images\Detail\Quan14_4.jpg" />
+    <Content Include="Images\Detail\Quan15_1.jpg" />
+    <Content Include="Images\Detail\Quan15_2.jpg" />
+    <Content Include="Images\Detail\Quan15_3.jpg" />
+    <Content Include="Images\Detail\Quan15_4.jpg" />
+    <Content Include="Images\Detail\Quan16_1.jpg" />
+    <Content Include="Images\Detail\Quan16_2.jpg" />
+    <Content Include="Images\Detail\Quan16_3.jpg" />
+    <Content Include="Images\Detail\Quan16_4.jpg" />
+    <Content Include="Images\Detail\Quan17_1.jpg" />
+    <Content Include="Images\Detail\Quan17_2.jpg" />
+    <Content Include="Images\Detail\Quan17_3.jpg" />
+    <Content Include="Images\Detail\Quan17_4.jpg" />
+    <Content Include="Images\Detail\Quan18_1.jpg" />
+    <Content Include="Images\Detail\Quan18_2.jpg" />
+    <Content Include="Images\Detail\Quan18_3.jpg" />
+    <Content Include="Images\Detail\Quan18_4.jpg" />
+    <Content Include="Images\Detail\Quan19_1.jpg" />
+    <Content Include="Images\Detail\Quan19_2.jpg" />
+    <Content Include="Images\Detail\Quan19_3.jpg" />
+    <Content Include="Images\Detail\Quan19_4.jpg" />
+    <Content Include="Images\Detail\Quan1_1.jpg" />
+    <Content Include="Images\Detail\Quan1_2.jpg" />
+    <Content Include="Images\Detail\Quan1_3.jpg" />
+    <Content Include="Images\Detail\Quan1_4.jpg" />
+    <Content Include="Images\Detail\Quan20_1.jpg" />
+    <Content Include="Images\Detail\Quan20_2.jpg" />
+    <Content Include="Images\Detail\Quan20_3.jpg" />
+    <Content Include="Images\Detail\Quan20_4.jpg" />
+    <Content Include="Images\Detail\Quan21_1.jpg" />
+    <Content Include="Images\Detail\Quan21_2.jpg" />
+    <Content Include="Images\Detail\Quan21_3.jpg" />
+    <Content Include="Images\Detail\Quan21_4.jpg" />
+    <Content Include="Images\Detail\Quan22_1.jpg" />
+    <Content Include="Images\Detail\Quan22_2.jpg" />
+    <Content Include="Images\Detail\Quan22_3.jpg" />
+    <Content Include="Images\Detail\Quan22_4.jpg" />
+    <Content Include="Images\Detail\Quan23_1.jpg" />
+    <Content Include="Images\Detail\Quan23_2.jpg" />
+    <Content Include="Images\Detail\Quan23_3.jpg" />
+    <Content Include="Images\Detail\Quan23_4.jpg" />
+    <Content Include="Images\Detail\Quan24_1.jpg" />
+    <Content Include="Images\Detail\Quan24_2.jpg" />
+    <Content Include="Images\Detail\Quan24_3.jpg" />
+    <Content Include="Images\Detail\Quan24_4.jpg" />
+    <Content Include="Images\Detail\Quan25_1.jpg" />
+    <Content Include="Images\Detail\Quan25_2.jpg" />
+    <Content Include="Images\Detail\Quan25_3.jpg" />
+    <Content Include="Images\Detail\Quan25_4.jpg" />
+    <Content Include="Images\Detail\Quan26_1.jpg" />
+    <Content Include="Images\Detail\Quan26_2.jpg" />
+    <Content Include="Images\Detail\Quan26_3.jpg" />
+    <Content Include="Images\Detail\Quan26_4.jpg" />
+    <Content Include="Images\Detail\Quan27_1.jpg" />
+    <Content Include="Images\Detail\Quan27_2.jpg" />
+    <Content Include="Images\Detail\Quan27_3.jpg" />
+    <Content Include="Images\Detail\Quan27_4.jpg" />
+    <Content Include="Images\Detail\Quan28_1.jpg" />
+    <Content Include="Images\Detail\Quan28_2.jpg" />
+    <Content Include="Images\Detail\Quan28_3.jpg" />
+    <Content Include="Images\Detail\Quan28_4.jpg" />
+    <Content Include="Images\Detail\Quan29_1.jpg" />
+    <Content Include="Images\Detail\Quan29_2.jpg" />
+    <Content Include="Images\Detail\Quan29_3.jpg" />
+    <Content Include="Images\Detail\Quan29_4.jpg" />
+    <Content Include="Images\Detail\Quan2_1.jpg" />
+    <Content Include="Images\Detail\Quan2_2.jpg" />
+    <Content Include="Images\Detail\Quan2_3.jpg" />
+    <Content Include="Images\Detail\Quan2_4.jpg" />
+    <Content Include="Images\Detail\Quan30_1.jpg" />
+    <Content Include="Images\Detail\Quan30_2.jpg" />
+    <Content Include="Images\Detail\Quan30_3.jpg" />
+    <Content Include="Images\Detail\Quan30_4.jpg" />
+    <Content Include="Images\Detail\Quan31_1.jpg" />
+    <Content Include="Images\Detail\Quan31_2.jpg" />
+    <Content Include="Images\Detail\Quan31_3.jpg" />
+    <Content Include="Images\Detail\Quan31_4.jpg" />
+    <Content Include="Images\Detail\Quan3_1.jpg" />
+    <Content Include="Images\Detail\Quan3_2.jpg" />
+    <Content Include="Images\Detail\Quan3_3.jpg" />
+    <Content Include="Images\Detail\Quan4_1.jpg" />
+    <Content Include="Images\Detail\Quan4_2.jpg" />
+    <Content Include="Images\Detail\Quan4_3.jpg" />
+    <Content Include="Images\Detail\Quan4_4.jpg" />
+    <Content Include="Images\Detail\Quan5_1.jpg" />
+    <Content Include="Images\Detail\Quan5_2.jpg" />
+    <Content Include="Images\Detail\Quan5_3.jpg" />
+    <Content Include="Images\Detail\Quan5_4.jpg" />
+    <Content Include="Images\Detail\Quan6_1.jpg" />
+    <Content Include="Images\Detail\Quan6_2.jpg" />
+    <Content Include="Images\Detail\Quan6_3.jpg" />
+    <Content Include="Images\Detail\Quan6_4.jpg" />
+    <Content Include="Images\Detail\Quan7_1.jpg" />
+    <Content Include="Images\Detail\Quan7_2.jpg" />
+    <Content Include="Images\Detail\Quan7_3.jpg" />
+    <Content Include="Images\Detail\Quan7_4.jpg" />
+    <Content Include="Images\Detail\Quan8_1.jpg" />
+    <Content Include="Images\Detail\Quan8_2.jpg" />
+    <Content Include="Images\Detail\Quan8_3.jpg" />
+    <Content Include="Images\Detail\Quan8_4.jpg" />
+    <Content Include="Images\Detail\Quan9_1.jpg" />
+    <Content Include="Images\Detail\Quan9_2.jpg" />
+    <Content Include="Images\Detail\Quan9_3.jpg" />
+    <Content Include="Images\Detail\Quan9_4.jpg" />
+    <Content Include="Images\Detail\Vay10_1.jpg" />
+    <Content Include="Images\Detail\Vay10_2.jpg" />
+    <Content Include="Images\Detail\Vay10_3.jpg" />
+    <Content Include="Images\Detail\Vay10_4.jpg" />
+    <Content Include="Images\Detail\Vay10_5.jpg" />
+    <Content Include="Images\Detail\Vay11_1.jpg" />
+    <Content Include="Images\Detail\Vay11_2.jpg" />
+    <Content Include="Images\Detail\Vay11_3.jpg" />
+    <Content Include="Images\Detail\Vay11_4.jpg" />
+    <Content Include="Images\Detail\Vay12_1.jpg" />
+    <Content Include="Images\Detail\Vay12_2.jpg" />
+    <Content Include="Images\Detail\Vay12_3.jpg" />
+    <Content Include="Images\Detail\Vay12_4.jpg" />
+    <Content Include="Images\Detail\Vay13_1.jpg" />
+    <Content Include="Images\Detail\Vay13_2.jpg" />
+    <Content Include="Images\Detail\Vay13_3.jpg" />
+    <Content Include="Images\Detail\Vay13_4.jpg" />
+    <Content Include="Images\Detail\Vay13_5.jpg" />
+    <Content Include="Images\Detail\Vay14_1.jpg" />
+    <Content Include="Images\Detail\Vay14_2.jpg" />
+    <Content Include="Images\Detail\Vay14_3.jpg" />
+    <Content Include="Images\Detail\Vay14_4.jpg" />
+    <Content Include="Images\Detail\Vay15_1.jpg" />
+    <Content Include="Images\Detail\Vay15_2.jpg" />
+    <Content Include="Images\Detail\Vay15_3.jpg" />
+    <Content Include="Images\Detail\Vay15_4.jpg" />
+    <Content Include="Images\Detail\Vay15_5.jpg" />
+    <Content Include="Images\Detail\Vay16_1.jpg" />
+    <Content Include="Images\Detail\Vay16_2.jpg" />
+    <Content Include="Images\Detail\Vay16_3.jpg" />
+    <Content Include="Images\Detail\Vay16_4.jpg" />
+    <Content Include="Images\Detail\Vay16_5.jpg" />
+    <Content Include="Images\Detail\Vay17_1.jpg" />
+    <Content Include="Images\Detail\Vay17_2.jpg" />
+    <Content Include="Images\Detail\Vay17_3.jpg" />
+    <Content Include="Images\Detail\Vay17_4.jpg" />
+    <Content Include="Images\Detail\Vay18_1.jpg" />
+    <Content Include="Images\Detail\Vay18_2.jpg" />
+    <Content Include="Images\Detail\Vay18_3.jpg" />
+    <Content Include="Images\Detail\Vay18_4.jpg" />
+    <Content Include="Images\Detail\Vay18_5.jpg" />
+    <Content Include="Images\Detail\Vay19_1.jpg" />
+    <Content Include="Images\Detail\Vay19_2.JPG" />
+    <Content Include="Images\Detail\Vay19_3.JPG" />
+    <Content Include="Images\Detail\Vay19_4.JPG" />
+    <Content Include="Images\Detail\Vay19_5.JPG" />
+    <Content Include="Images\Detail\Vay1_1.jpg" />
+    <Content Include="Images\Detail\Vay1_2.jpg" />
+    <Content Include="Images\Detail\Vay1_3.jpg" />
+    <Content Include="Images\Detail\Vay1_4.jpg" />
+    <Content Include="Images\Detail\Vay1_5.jpg" />
+    <Content Include="Images\Detail\Vay20_1.jpg" />
+    <Content Include="Images\Detail\Vay20_2.jpg" />
+    <Content Include="Images\Detail\Vay20_3.jpg" />
+    <Content Include="Images\Detail\Vay20_4.jpg" />
+    <Content Include="Images\Detail\Vay21_1.jpg" />
+    <Content Include="Images\Detail\Vay21_2.jpg" />
+    <Content Include="Images\Detail\Vay21_3.jpg" />
+    <Content Include="Images\Detail\Vay21_4.jpg" />
+    <Content Include="Images\Detail\Vay21_5.jpg" />
+    <Content Include="Images\Detail\Vay22_1.jpg" />
+    <Content Include="Images\Detail\Vay22_2.jpg" />
+    <Content Include="Images\Detail\Vay22_3.jpg" />
+    <Content Include="Images\Detail\Vay22_4.jpg" />
+    <Content Include="Images\Detail\Vay22_5.jpg" />
+    <Content Include="Images\Detail\Vay23_1.jpg" />
+    <Content Include="Images\Detail\Vay23_2.jpg" />
+    <Content Include="Images\Detail\Vay23_3.jpg" />
+    <Content Include="Images\Detail\Vay23_4.jpg" />
+    <Content Include="Images\Detail\Vay23_5.jpg" />
+    <Content Include="Images\Detail\Vay24_1.jpg" />
+    <Content Include="Images\Detail\Vay24_2.jpg" />
+    <Content Include="Images\Detail\Vay24_3.jpg" />
+    <Content Include="Images\Detail\Vay24_4.jpg" />
+    <Content Include="Images\Detail\Vay24_5.jpg" />
+    <Content Include="Images\Detail\Vay25_1.jpg" />
+    <Content Include="Images\Detail\Vay25_2.jpg" />
+    <Content Include="Images\Detail\Vay25_3.jpg" />
+    <Content Include="Images\Detail\Vay25_4.jpg" />
+    <Content Include="Images\Detail\Vay25_5.jpg" />
+    <Content Include="Images\Detail\Vay26_1.jpg" />
+    <Content Include="Images\Detail\Vay26_2.jpg" />
+    <Content Include="Images\Detail\Vay26_3.jpg" />
+    <Content Include="Images\Detail\Vay26_4.jpg" />
+    <Content Include="Images\Detail\Vay26_5.jpg" />
+    <Content Include="Images\Detail\Vay27_1.jpg" />
+    <Content Include="Images\Detail\Vay27_2.jpg" />
+    <Content Include="Images\Detail\Vay27_3.jpg" />
+    <Content Include="Images\Detail\Vay27_4.jpg" />
+    <Content Include="Images\Detail\Vay27_5.jpg" />
+    <Content Include="Images\Detail\Vay28_1.jpg" />
+    <Content Include="Images\Detail\Vay28_2.jpg" />
+    <Content Include="Images\Detail\Vay28_3.jpg" />
+    <Content Include="Images\Detail\Vay28_4.jpg" />
+    <Content Include="Images\Detail\Vay28_5.jpg" />
+    <Content Include="Images\Detail\Vay29_1.JPG" />
+    <Content Include="Images\Detail\Vay29_2.JPG" />
+    <Content Include="Images\Detail\Vay29_3.JPG" />
+    <Content Include="Images\Detail\Vay29_4.JPG" />
+    <Content Include="Images\Detail\Vay29_5.JPG" />
+    <Content Include="Images\Detail\Vay2_1.jpg" />
+    <Content Include="Images\Detail\Vay2_2.jpg" />
+    <Content Include="Images\Detail\Vay2_3.jpg" />
+    <Content Include="Images\Detail\Vay2_4.jpg" />
+    <Content Include="Images\Detail\Vay30_1.jpg" />
+    <Content Include="Images\Detail\Vay30_2.jpg" />
+    <Content Include="Images\Detail\Vay30_3.jpg" />
+    <Content Include="Images\Detail\Vay30_4.jpg" />
+    <Content Include="Images\Detail\Vay31_1.JPG" />
+    <Content Include="Images\Detail\Vay31_2.JPG" />
+    <Content Include="Images\Detail\Vay31_3.JPG" />
+    <Content Include="Images\Detail\Vay31_4.JPG" />
+    <Content Include="Images\Detail\Vay31_5.JPG" />
+    <Content Include="Images\Detail\Vay32_1.jpg" />
+    <Content Include="Images\Detail\Vay32_2.jpg" />
+    <Content Include="Images\Detail\Vay32_3.jpg" />
+    <Content Include="Images\Detail\Vay32_4.jpg" />
+    <Content Include="Images\Detail\Vay32_5.jpg" />
+    <Content Include="Images\Detail\Vay33_1.jpg" />
+    <Content Include="Images\Detail\Vay33_2.jpg" />
+    <Content Include="Images\Detail\Vay33_3.jpg" />
+    <Content Include="Images\Detail\Vay33_4.jpg" />
+    <Content Include="Images\Detail\Vay33_5.jpg" />
+    <Content Include="Images\Detail\Vay34_1.jpg" />
+    <Content Include="Images\Detail\Vay34_2.jpg" />
+    <Content Include="Images\Detail\Vay34_3.jpg" />
+    <Content Include="Images\Detail\Vay34_4.jpg" />
+    <Content Include="Images\Detail\Vay34_5.jpg" />
+    <Content Include="Images\Detail\Vay35_1.jpg" />
+    <Content Include="Images\Detail\Vay35_2.jpg" />
+    <Content Include="Images\Detail\Vay35_3.jpg" />
+    <Content Include="Images\Detail\Vay35_4.jpg" />
+    <Content Include="Images\Detail\Vay35_5.jpg" />
+    <Content Include="Images\Detail\Vay36_1.jpg" />
+    <Content Include="Images\Detail\Vay36_2.jpg" />
+    <Content Include="Images\Detail\Vay36_3.jpg" />
+    <Content Include="Images\Detail\Vay36_4.jpg" />
+    <Content Include="Images\Detail\Vay36_5.jpg" />
+    <Content Include="Images\Detail\Vay37_1.jpg" />
+    <Content Include="Images\Detail\Vay37_2.jpg" />
+    <Content Include="Images\Detail\Vay37_3.jpg" />
+    <Content Include="Images\Detail\Vay37_4.jpg" />
+    <Content Include="Images\Detail\Vay37_5.jpg" />
+    <Content Include="Images\Detail\Vay38_1.jpg" />
+    <Content Include="Images\Detail\Vay38_2.jpg" />
+    <Content Include="Images\Detail\Vay38_3.jpg" />
+    <Content Include="Images\Detail\Vay38_4.jpg" />
+    <Content Include="Images\Detail\Vay39_1.jpg" />
+    <Content Include="Images\Detail\Vay39_2.jpg" />
+    <Content Include="Images\Detail\Vay39_3.jpg" />
+    <Content Include="Images\Detail\Vay39_4.jpg" />
+    <Content Include="Images\Detail\Vay39_5.jpg" />
+    <Content Include="Images\Detail\Vay3_1.jpg" />
+    <Content Include="Images\Detail\Vay3_2.jpg" />
+    <Content Include="Images\Detail\Vay3_3.jpg" />
+    <Content Include="Images\Detail\Vay3_4.jpg" />
+    <Content Include="Images\Detail\Vay3_5.jpg" />
+    <Content Include="Images\Detail\Vay40_1.jpg" />
+    <Content Include="Images\Detail\Vay40_2.jpg" />
+    <Content Include="Images\Detail\Vay40_3.jpg" />
+    <Content Include="Images\Detail\Vay40_4.jpg" />
+    <Content Include="Images\Detail\Vay40_5.jpg" />
+    <Content Include="Images\Detail\Vay41_1.jpg" />
+    <Content Include="Images\Detail\Vay41_2.jpg" />
+    <Content Include="Images\Detail\Vay41_3.jpg" />
+    <Content Include="Images\Detail\Vay41_4.jpg" />
+    <Content Include="Images\Detail\Vay41_5.jpg" />
+    <Content Include="Images\Detail\Vay42_1.jpg" />
+    <Content Include="Images\Detail\Vay42_2.jpg" />
+    <Content Include="Images\Detail\Vay42_3.jpg" />
+    <Content Include="Images\Detail\Vay42_4.jpg" />
+    <Content Include="Images\Detail\Vay42_5.jpg" />
+    <Content Include="Images\Detail\Vay43_1.jpg" />
+    <Content Include="Images\Detail\Vay43_2.jpg" />
+    <Content Include="Images\Detail\Vay43_3.jpg" />
+    <Content Include="Images\Detail\Vay43_4.jpg" />
+    <Content Include="Images\Detail\Vay43_5.jpg" />
+    <Content Include="Images\Detail\Vay44_1.jpg" />
+    <Content Include="Images\Detail\Vay44_2.jpg" />
+    <Content Include="Images\Detail\Vay44_3.jpg" />
+    <Content Include="Images\Detail\Vay44_4.jpg" />
+    <Content Include="Images\Detail\Vay44_5.jpg" />
+    <Content Include="Images\Detail\Vay4_1.jpg" />
+    <Content Include="Images\Detail\Vay4_2.jpg" />
+    <Content Include="Images\Detail\Vay4_3.jpg" />
+    <Content Include="Images\Detail\Vay4_4.jpg" />
+    <Content Include="Images\Detail\Vay4_5.jpg" />
+    <Content Include="Images\Detail\Vay5_1.jpg" />
+    <Content Include="Images\Detail\Vay5_2.jpg" />
+    <Content Include="Images\Detail\Vay5_3.jpg" />
+    <Content Include="Images\Detail\Vay5_4.jpg" />
+    <Content Include="Images\Detail\Vay5_5.jpg" />
+    <Content Include="Images\Detail\Vay6_1.jpg" />
+    <Content Include="Images\Detail\Vay6_2.jpg" />
+    <Content Include="Images\Detail\Vay6_3.jpg" />
+    <Content Include="Images\Detail\Vay6_4.jpg" />
+    <Content Include="Images\Detail\Vay7_1.jpg" />
+    <Content Include="Images\Detail\Vay7_2.jpg" />
+    <Content Include="Images\Detail\Vay7_3.jpg" />
+    <Content Include="Images\Detail\Vay7_4.jpg" />
+    <Content Include="Images\Detail\Vay7_5.jpg" />
+    <Content Include="Images\Detail\Vay8_1.jpg" />
+    <Content Include="Images\Detail\Vay8_2.jpg" />
+    <Content Include="Images\Detail\Vay8_3.jpg" />
+    <Content Include="Images\Detail\Vay8_4.jpg" />
+    <Content Include="Images\Detail\Vay9_1.jpg" />
+    <Content Include="Images\Detail\Vay9_2.jpg" />
+    <Content Include="Images\Detail\Vay9_3.jpg" />
+    <Content Include="Images\Detail\Vay9_4.jpg" />
+    <Content Include="Images\Event\sukien5.jpg" />
+    <Content Include="Images\Info\baohanh.png" />
+    <Content Include="Images\Info\dathang.png" />
+    <Content Include="Images\Info\doitra.png" />
+    <Content Include="Images\Info\doitra2.png" />
+    <Content Include="Images\Info\khachvip.png" />
+    <Content Include="Images\Info\Tuyendung.png" />
+    <Content Include="Images\Info\vanchuyen.png" />
+    <Content Include="Images\Static\cart-bag.png" />
+    <Content Include="Images\Static\cart.png" />
+    <Content Include="Images\Static\ic-home.png" />
+    <Content Include="Images\Static\magnifying-glass.png" />
+    <Content Include="Images\Static\search.png" />
+    <Content Include="Images\Static\stars.png" />
+    <Content Include="Images\Static\triangle.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\customer.js" />
+    <Content Include="Scripts\global_js.js" />
+    <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Content\theme.css" />
+    <Content Include="Content\ui.captionator.css" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\slider.js" />
+    <Content Include="Scripts\ui.captionator.js" />
+    <Content Include="Content\ui.product.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\Event\sukien1.jpg" />
+    <Content Include="Images\Event\sukien2.jpg" />
+    <Content Include="Images\Event\sukien3.jpg" />
+    <Content Include="Images\Event\sukien4.jpg" />
+    <Content Include="Images\Static\service-icon.png" />
+    <Content Include="Images\Static\ShopSavvy-logo.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ui.product.js" />
+    <Content Include="Scripts\view-detail.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_html5shiv.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Home\Loading.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\CheckOut.cshtml" />
+    <Content Include="Views\Account\DangNhap.cshtml" />
+    <Content Include="Views\Account\DangKy.cshtml" />
+    <Content Include="Views\Account\QuenMatKhau.cshtml" />
+    <Content Include="Views\Home\Infomation.cshtml" />
+    <Content Include="Views\Customer\Dashboard.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Account\DangXuat.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27454</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:27420/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

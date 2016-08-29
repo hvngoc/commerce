@@ -1,0 +1,16 @@
+#wrapper-capnhat-thongtin,
+#wrapper-capnhat-matkhau,
+#wrapper-kiemtra-taikhoan,
+#wrapper-themmoi-taikhoan,
+#wrapper-xoa-taikhoan,
+#wrapper-donggop-ykien {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+  padding-top: 11%;
+  z-index: 1;
+}

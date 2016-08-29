@@ -1,0 +1,379 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.left-side-product {}
+
+.product-content {
+  padding-top: 50px;
+}
+
+.content {
+  padding: 5px 10px;
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+}
+
+.clothes-info div {
+  padding: 5px 0;
+}
+
+.clothes-info {
+  background: white;
+  border-radius: 3px;
+  padding-bottom: 55px;
+  border: 1px solid #f1f1f1;
+}
+
+.gallery {
+  padding: 5px 10px;
+  display: table-cell;
+}
+
+.images {
+  padding: 2px;
+  text-align: center;
+}
+
+.images >img {
+  height: 50px;
+  transition: all 0.5s;
+}
+
+.images >img:hover {
+  cursor: pointer;
+  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+}
+
+#photo {
+  width: 300px;
+  height: 300px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin-left: 10px;
+  transition: all 0.5s;
+  position: relative;
+  text-align: center;
+}
+
+#photo >img {
+  max-width: 300px;
+  max-height: 300px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  position: absolute;
+  transition: filter 0.5s, -webkit-filter 0.5s, -moz-filter 0.5s;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#photo>img:hover {
+  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  cursor: pointer;
+}
+
+.title>span {
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px #555;
+  color: #555;
+}
+
+.rating img {
+  width: 15px;
+}
+
+.rating {
+  display: inline-block;
+}
+
+.rating >span {
+  font-weight: 600;
+  font-size: 13px;
+  color: green;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.detail-price {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+  padding-top: 10px;
+}
+
+.subtitle {
+  padding: 5px 0;
+}
+
+.subtitle a {
+  text-decoration: none;
+}
+
+.subtitle >span {
+  display: inline;
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.subtitle>span:nth-child(3) {
+  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+}
+
+.clothes-attribute >span:first-child {
+  display: inline-block;
+  width: 100px;
+  margin-right: 20px;
+  padding-left: 10px;
+}
+
+.clothes-size >a {
+  text-align: center;
+  display: inline-block;
+}
+
+.clothes-size>a,
+.clothes-color >a {
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+  vertical-align: middle;
+  border: 2px solid #e5e5e5;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.clothes-color .red {
+  background-color: red;
+}
+
+.clothes-color .green {
+  background-color: green;
+}
+
+.clothes-color .black {
+  background-color: black;
+}
+
+.clothes-color >a:hover,
+.clothes-size>a:hover {
+  border: 2px solid #aaa;
+}
+
+.clothes-style >span:nth-child(2) {
+  margin-left: 4px;
+}
+
+.clothes-quantity >input {
+  width: 50px;
+  border: 2px solid #f1f1f1;
+  background: #f9f9f9;
+}
+
+.add-button {
+  background: #FAFAFA;
+  padding-top: 5px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+}
+
+.add-button >button {
+  background: #019901;
+  padding: 5px 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+#add-clothes:hover {
+  background: #016601;
+}
+
+#buy-clothes {
+  background: #E5101D;
+  margin: 0 10px;
+}
+
+#buy-clothes:hover {
+  background: #bb101D;
+}
+
+.instruction {
+  text-align: center;
+  font-size: 0;
+  padding: 10px;
+}
+
+.instruction>a {
+  text-decoration: none;
+  border: 1px solid #FAFAFA;
+  transition: all 0.5s;
+  text-align: center;
+  display: inline-block;
+  padding: 20px 60px;
+  position: relative;
+  font-size: 15px;
+}
+
+.instruction>a:hover {
+  background: white;
+  border: 1px solid #f1f1f1;
+  transition: all 0.5s;
+}
+
+.buying-step::before,
+.transport::before,
+.payment::before {
+    background: url('../Images/Static/ic-home.png');
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-left: 5px;
+    top: 5px;
+    left: 0;
+}
+
+.buying-step::before {
+  background-position: 0 -503px;
+}
+
+.transport::before {
+  background-position: -54px -503px;
+}
+
+.payment::before {
+  background-position: -107px -503px;
+}
+
+.detail {
+  text-align: center;
+  background: white;
+  margin-left: 20px;
+  border: 1px solid #f1f1f1;
+}
+
+.detail img {
+  padding: 20px;
+}
+
+.right-side-product {
+  background: white;
+  border: 1px solid #f1f1f1;
+  border-radius: 3px;
+}
+
+.top-ten {
+  text-align: center;
+}
+
+.top-ten>div:first-child {
+  padding: 10px;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-bottom: 2px solid gray;
+}
+
+.top-ten-item {
+  margin: 5px 0;
+  border: 1px solid #e1e1e1;
+  display: inline-block;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.top-ten-item img {
+  width: 180px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transition: all 0.5s;
+}
+
+.top-ten-item img:hover {
+  filter: brightness(90%);
+  -webkit-filter: brightness(90%);
+  -moz-filter: brightness(90%);
+}
+
+.top-ten-item>div {
+  padding: 10px 5px;
+  margin: 0 5px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  font-size: 14px;
+}
+
+.interested-item {
+  padding-top: 50px;
+}
+
+.interested-item >div:first-child {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 5px 20px;
+}
+
+#scroller {
+  position: relative;
+  height: 250px;
+}
+
+#scroller .innerScrollArea {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#scroller .innerScrollArea img {
+  height: 150px;
+  width: 130px;
+  transition: all 0.5s;
+}
+
+#scroller .innerScrollArea img:hover {
+  filter: brightness(80%);
+  -webkit-filter: brightness(80%);
+  -moz-filter: brightness(80%);
+}
+
+#scroller ul {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+#scroller li {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 20px;
+  border: 1px solid #f1f1f1;
+  transition: all 0.5s;
+  position: absolute;
+}
+
+#scroller li >div {
+  background: white;
+}
+
+#scroller li >div:first-of-type {
+  color: red;
+  font-weight: bold;
+}

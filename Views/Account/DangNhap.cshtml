@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" cart-container container">
+    <div class="cart">
+        <div>
+            Tài Khoản
+        </div>
+        <div>
+            @if (Session["TaiKhoan"] != null) 
+            { 
+            <h4>
+                Đăng Nhập Thành Công. Click <a href="@Url.Action("Dashboard", "Customer")"> vào đây </a> để trở về trang quản lý.
+            </h4>
+            }
+            else
+            {
+                <h4>
+                    Tên Tài Khoản Hoặc Mật Khẩu Không Đúng.
+                </h4>
+            }
+        </div>
+    </div>
+</div>
+
+
